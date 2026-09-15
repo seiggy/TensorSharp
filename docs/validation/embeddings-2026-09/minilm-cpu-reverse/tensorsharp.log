@@ -1,0 +1,57 @@
+
+  ████████╗███████╗███╗   ██╗███████╗ ██████╗ ██████╗ ███████╗██╗  ██╗ █████╗ ██████╗ ██████╗ 
+  ╚══██╔══╝██╔════╝████╗  ██║██╔════╝██╔═══██╗██╔══██╗██╔════╝██║  ██║██╔══██╗██╔══██╗██╔══██╗
+     ██║   █████╗  ██╔██╗ ██║███████╗██║   ██║██████╔╝███████╗███████║███████║██████╔╝██████╔╝
+     ██║   ██╔══╝  ██║╚██╗██║╚════██║██║   ██║██╔══██╗╚════██║██╔══██║██╔══██║██╔══██╗██╔═══╝ 
+     ██║   ███████╗██║ ╚████║███████║╚██████╔╝██║  ██║███████║██║  ██║██║  ██║██║  ██║██║     
+     ╚═╝   ╚══════╝╚═╝  ╚═══╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝
+
+                           Open-Source Deep Learning / AI C# Library
+                           https://github.com/zhongkaifu/TensorSharp
+
+repack: repack tensor blk.0.attn_output.weight with q8_0_4x8
+repack: repack tensor blk.0.attn_qkv.weight with q8_0_4x8
+repack: repack tensor blk.0.ffn_down.weight with q8_0_4x8
+repack: repack tensor blk.0.ffn_up.weight with q8_0_4x8
+repack: repack tensor blk.1.attn_output.weight with q8_0_4x8
+repack: repack tensor blk.1.attn_qkv.weight with q8_0_4x8
+repack: repack tensor blk.1.ffn_down.weight with q8_0_4x8
+repack: repack tensor blk.1.ffn_up.weight with q8_0_4x8
+repack: repack tensor blk.2.attn_output.weight with q8_0_4x8
+repack: repack tensor blk.2.attn_qkv.weight with q8_0_4x8
+repack: repack tensor blk.2.ffn_down.weight with q8_0_4x8
+repack: repack tensor blk.2.ffn_up.weight with q8_0_4x8
+repack: repack tensor blk.3.attn_output.weight with q8_0_4x8
+repack: repack tensor blk.3.attn_qkv.weight with q8_0_4x8
+repack: repack tensor blk.3.ffn_down.weight with q8_0_4x8
+repack: repack tensor blk.3.ffn_up.weight with q8_0_4x8
+repack: repack tensor blk.4.attn_output.weight with q8_0_4x8
+repack: repack tensor blk.4.attn_qkv.weight with q8_0_4x8
+repack: repack tensor blk.4.ffn_down.weight with q8_0_4x8
+repack: repack tensor blk.4.ffn_up.weight with q8_0_4x8
+repack: repack tensor blk.5.attn_output.weight with q8_0_4x8
+repack: repack tensor blk.5.attn_qkv.weight with q8_0_4x8
+repack: repack tensor blk.5.ffn_down.weight with q8_0_4x8
+repack: repack tensor blk.5.ffn_up.weight with q8_0_4x8
+warn: TensorSharp.Server.Logging.RequestLoggingMiddleware[1103]
+      HTTP POST /v1/embeddings -> 400 in 1.0 ms (response content-type=application/json; charset=utf-8)
+warn: TensorSharp.Server.Logging.RequestLoggingMiddleware[1103]
+      HTTP POST /v1/embeddings -> 400 in 0.1 ms (response content-type=application/json; charset=utf-8)
+warn: TensorSharp.Server.Logging.RequestLoggingMiddleware[1103]
+      HTTP POST /v1/embeddings -> 400 in 0.0 ms (response content-type=application/json; charset=utf-8)
+warn: TensorSharp.Server.Logging.RequestLoggingMiddleware[1103]
+      HTTP POST /v1/embeddings -> 400 in 0.0 ms (response content-type=application/json; charset=utf-8)
+warn: TensorSharp.Server.Logging.RequestLoggingMiddleware[1103]
+      HTTP POST /v1/embeddings -> 400 in 0.2 ms (response content-type=application/json; charset=utf-8)
+warn: TensorSharp.Server.Logging.RequestLoggingMiddleware[1103]
+      HTTP POST /v1/embeddings -> 400 in 0.0 ms (response content-type=application/json; charset=utf-8)
+warn: TensorSharp.Server.Logging.RequestLoggingMiddleware[1103]
+      HTTP POST /v1/embeddings -> 400 in 0.0 ms (response content-type=application/json; charset=utf-8)
+warn: TensorSharp.Server.Logging.RequestLoggingMiddleware[1103]
+      HTTP POST /v1/embeddings -> 400 in 0.0 ms (response content-type=application/json; charset=utf-8)
+warn: TensorSharp.Server.Logging.RequestLoggingMiddleware[1103]
+      HTTP POST /v1/embeddings -> 400 in 0.0 ms (response content-type=application/json; charset=utf-8)
+warn: TensorSharp.Server.Logging.RequestLoggingMiddleware[1103]
+      HTTP POST /v1/embeddings -> 400 in 0.0 ms (response content-type=application/json; charset=utf-8)
+warn: TensorSharp.Server.Logging.RequestLoggingMiddleware[1103]
+      HTTP POST /v1/embeddings -> 404 in 0.1 ms (response content-type=application/json; charset=utf-8)

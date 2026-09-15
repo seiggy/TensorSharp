@@ -1,0 +1,9 @@
+{
+  "openai": "2.48.0",
+  "ollama": "0.6.2",
+  "openai_default_encoding_sdk_decoded": true,
+  "dimensions": 256,
+  "prompt_tokens": 26,
+  "ollama_prompt_eval_count": 26,
+  "legacy_dimensions": 1024
+}

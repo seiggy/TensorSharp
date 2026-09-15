@@ -1,0 +1,2239 @@
+{
+  "purpose": "All retained exploratory and superseded benchmark runs, including failed gates. Final paired runs and repeatability follow-up remain uncompressed.",
+  "archive": "diagnostics.tar.gz",
+  "archive_bytes": 12546905,
+  "archive_sha256": "fddb2969a25d90608496f86be8dc6c4778538bf94700c6afa352ee8593b41866",
+  "original_bytes": 55293452,
+  "verified_before_source_removal": true,
+  "runs": [
+    {
+      "directory": "minilm-cpu-before-backend-optimization",
+      "timestamp": "2026-09-14T23:57:41Z",
+      "prewarm_seconds": null,
+      "warmup": 3,
+      "repeats": 5,
+      "minimum_measure_seconds": null,
+      "connection_mode": null,
+      "comparison": {
+        "cosines": [
+          0.9998972676855219,
+          0.9999213941145839,
+          0.9999232948488589,
+          0.9999024711349095,
+          0.9998722724086951,
+          0.999888830349316,
+          0.9998653823815647,
+          0.9999194812226193,
+          0.9998448093358142,
+          0.9998560816620057,
+          0.9998963319696488,
+          0.9998860596317285,
+          0.9998578189181375
+        ],
+        "min_cosine": 0.9998448093358142,
+        "max_absolute_error": 0.0034307774753568176,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 1.479568009340356,
+          "single_medium": 1.3417150474563946,
+          "single_long": 1.4061867110556288,
+          "batch8_short": 1.8146911724924166,
+          "batch8_medium": 1.5172630210233504,
+          "batch32_short": 2.2350760692455416,
+          "batch_mixed": 3.0549019343075186
+        },
+        "performance_pass": false
+      }
+    },
+    {
+      "directory": "minilm-cpu-before-compact",
+      "timestamp": "2026-09-15T00:04:45Z",
+      "prewarm_seconds": null,
+      "warmup": 3,
+      "repeats": 5,
+      "minimum_measure_seconds": null,
+      "connection_mode": null,
+      "comparison": {
+        "cosines": [
+          0.9998972677002019,
+          0.999921394150701,
+          0.9999232948267867,
+          0.9999024710836636,
+          0.9998722724240221,
+          0.9998888302955695,
+          0.9998653823373839,
+          0.9999194811905764,
+          0.999844809303767,
+          0.9998560817266418,
+          0.9998963318931882,
+          0.9998860596679942,
+          0.999857818937989
+        ],
+        "min_cosine": 0.999844809303767,
+        "max_absolute_error": 0.0034307774753568176,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 1.4052449399019253,
+          "single_medium": 1.0367904253398672,
+          "single_long": 0.9375967536803145,
+          "batch8_short": 1.2490354256062306,
+          "batch8_medium": 0.8954829771033934,
+          "batch32_short": 1.4261480857522508,
+          "batch_mixed": 1.8832366889695866
+        },
+        "performance_pass": false
+      }
+    },
+    {
+      "directory": "minilm-cpu-before-final",
+      "timestamp": "2026-09-15T00:18:54Z",
+      "prewarm_seconds": 2.0,
+      "warmup": 3,
+      "repeats": 10,
+      "minimum_measure_seconds": null,
+      "connection_mode": null,
+      "comparison": {
+        "cosines": [
+          0.9998972677002019,
+          0.999921394150701,
+          0.9999232948499359,
+          0.9999024710836636,
+          0.9998722724240221,
+          0.9998888302955695,
+          0.9998653823373839,
+          0.9999194811905764,
+          0.999844809303767,
+          0.9998560817266418,
+          0.9998963318931882,
+          0.9998860596679942,
+          0.999857818937989
+        ],
+        "min_cosine": 0.999844809303767,
+        "max_absolute_error": 0.0034307774753568176,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 1.1919161415188027,
+          "single_medium": 0.9946943033185175,
+          "single_long": 0.9407087384286852,
+          "batch8_short": 0.9681625866061389,
+          "batch8_medium": 0.8891537083468787,
+          "batch32_short": 0.9801088467283754,
+          "batch_mixed": 1.025807917773064
+        },
+        "performance_pass": false
+      }
+    },
+    {
+      "directory": "minilm-cpu-before-final-assemblies",
+      "timestamp": "2026-09-15T01:12:10Z",
+      "prewarm_seconds": 10.0,
+      "warmup": 5,
+      "repeats": 20,
+      "minimum_measure_seconds": 1.0,
+      "connection_mode": "persistent-per-thread",
+      "comparison": {
+        "cosines": [
+          0.9998972677002019,
+          0.999921394150701,
+          0.9999232948499359,
+          0.9999024710836636,
+          0.9998722724240221,
+          0.9998888302955695,
+          0.9998653823373839,
+          0.9999194811905764,
+          0.999844809303767,
+          0.9998560817266418,
+          0.9998963318931882,
+          0.9998860596679942,
+          0.999857818937989
+        ],
+        "min_cosine": 0.999844809303767,
+        "max_absolute_error": 0.0034307774753568176,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 0.8769330725429315,
+          "single_medium": 0.9427758628215536,
+          "single_long": 0.9135759749338053,
+          "batch8_short": 0.8003439262840035,
+          "batch8_medium": 0.8425573520957136,
+          "batch32_short": 0.7923220097208244,
+          "batch_mixed": 0.9847811945251351
+        },
+        "performance_pass": true
+      }
+    },
+    {
+      "directory": "minilm-cpu-before-runtime-warmup",
+      "timestamp": "2026-09-15T00:43:36Z",
+      "prewarm_seconds": 2.0,
+      "warmup": 5,
+      "repeats": 20,
+      "minimum_measure_seconds": 1.0,
+      "connection_mode": "persistent-per-thread",
+      "comparison": {
+        "cosines": [
+          0.9998972677002019,
+          0.999921394150701,
+          0.9999232948499359,
+          0.9999024710836636,
+          0.9998722724240221,
+          0.9998888302955695,
+          0.9998653823373839,
+          0.9999194811905764,
+          0.999844809303767,
+          0.9998560817266418,
+          0.9998963318931882,
+          0.9998860596679942,
+          0.999857818937989
+        ],
+        "min_cosine": 0.999844809303767,
+        "max_absolute_error": 0.0034307774753568176,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 0.9809387524515543,
+          "single_medium": 0.8917766941266951,
+          "single_long": 0.90310765897294,
+          "batch8_short": 0.7305004273027064,
+          "batch8_medium": 0.8333866128479126,
+          "batch32_short": 0.8097652249219324,
+          "batch_mixed": 0.9599346569796755
+        },
+        "performance_pass": true
+      }
+    },
+    {
+      "directory": "minilm-cpu-before-sustained",
+      "timestamp": "2026-09-15T00:35:11Z",
+      "prewarm_seconds": 2.0,
+      "warmup": 5,
+      "repeats": 20,
+      "minimum_measure_seconds": null,
+      "connection_mode": "persistent-per-thread",
+      "comparison": {
+        "cosines": [
+          0.9998972677002019,
+          0.999921394150701,
+          0.9999232948499359,
+          0.9999024710836636,
+          0.9998722724240221,
+          0.9998888302955695,
+          0.9998653823373839,
+          0.9999194811905764,
+          0.999844809303767,
+          0.9998560817266418,
+          0.9998963318931882,
+          0.9998860596679942,
+          0.999857818937989
+        ],
+        "min_cosine": 0.999844809303767,
+        "max_absolute_error": 0.0034307774753568176,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 0.8695575128571733,
+          "single_medium": 0.8856709638744158,
+          "single_long": 0.9581140360922451,
+          "batch8_short": 0.9194486059720955,
+          "batch8_medium": 0.8895009866409624,
+          "batch32_short": 0.8431634000306989,
+          "batch_mixed": 0.9636388536040209
+        },
+        "performance_pass": true
+      }
+    },
+    {
+      "directory": "minilm-cpu-no-copies-quiet",
+      "timestamp": "2026-09-15T00:23:01Z",
+      "prewarm_seconds": 2.0,
+      "warmup": 5,
+      "repeats": 20,
+      "minimum_measure_seconds": null,
+      "connection_mode": null,
+      "comparison": {
+        "cosines": [
+          0.9998972677002019,
+          0.999921394150701,
+          0.9999232948499359,
+          0.9999024710836636,
+          0.9998722724240221,
+          0.9998888302955695,
+          0.9998653823373839,
+          0.9999194811905764,
+          0.999844809303767,
+          0.9998560817266418,
+          0.9998963318931882,
+          0.9998860596679942,
+          0.999857818937989
+        ],
+        "min_cosine": 0.999844809303767,
+        "max_absolute_error": 0.0034307774753568176,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 1.0839955189077546,
+          "single_medium": 1.036181273582982,
+          "single_long": 0.9883462058263544,
+          "batch8_short": 0.9802410650702383,
+          "batch8_medium": 0.919390544840503,
+          "batch32_short": 0.9397659793128733,
+          "batch_mixed": 0.9769215763231179
+        },
+        "performance_pass": false
+      }
+    },
+    {
+      "directory": "minilm-managed-attention",
+      "timestamp": "2026-09-15T00:52:46Z",
+      "prewarm_seconds": 2.0,
+      "warmup": 5,
+      "repeats": 20,
+      "minimum_measure_seconds": 1.0,
+      "connection_mode": "persistent-per-thread",
+      "comparison": {
+        "cosines": [
+          0.9998771455876635,
+          0.9999161271494867,
+          0.999934979993581,
+          0.9998711784804581,
+          0.9998955993626268,
+          0.9998682595098425,
+          0.9998818408564324,
+          0.9998783256106759,
+          0.9998513342337223,
+          0.9998685695571329,
+          0.9998624311830058,
+          0.9998811753804253,
+          0.999831836267756
+        ],
+        "min_cosine": 0.999831836267756,
+        "max_absolute_error": 0.003414670475356818,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 1.1101593619152745,
+          "single_medium": 1.0799098118724815,
+          "single_long": 1.330803824805811,
+          "batch8_short": 0.8040701632789732,
+          "batch8_medium": 1.0699443040283994,
+          "batch32_short": 0.8469221358442394,
+          "batch_mixed": 1.139266247349222
+        },
+        "performance_pass": false
+      }
+    },
+    {
+      "directory": "minilm-managed-before-value-tiles",
+      "timestamp": "2026-09-15T01:09:25Z",
+      "prewarm_seconds": 10.0,
+      "warmup": 5,
+      "repeats": 20,
+      "minimum_measure_seconds": 1.0,
+      "connection_mode": "persistent-per-thread",
+      "comparison": {
+        "cosines": [
+          0.9998771455636069,
+          0.9999157830569417,
+          0.9999359640792249,
+          0.999882513464368,
+          0.9998956453552481,
+          0.9998682596149066,
+          0.9998818394233876,
+          0.9998758253733202,
+          0.999840466136781,
+          0.9998645138635267,
+          0.999862431118225,
+          0.9998803864830005,
+          0.9998318362603653
+        ],
+        "min_cosine": 0.9998318362603653,
+        "max_absolute_error": 0.003322734475356817,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 1.0319632208060854,
+          "single_medium": 1.073323399137139,
+          "single_long": 1.1188362347193912,
+          "batch8_short": 0.8740797655359226,
+          "batch8_medium": 0.9957153988258554,
+          "batch32_short": 0.9011006129779795,
+          "batch_mixed": 1.1934251576073962
+        },
+        "performance_pass": false
+      }
+    },
+    {
+      "directory": "minilm-managed-initial",
+      "timestamp": "2026-09-15T00:30:32Z",
+      "prewarm_seconds": 2.0,
+      "warmup": 1,
+      "repeats": 3,
+      "minimum_measure_seconds": null,
+      "connection_mode": "persistent-per-thread",
+      "comparison": {
+        "cosines": [
+          0.9998771455876635,
+          0.9999161271494867,
+          0.999934979993581,
+          0.9998711784804581,
+          0.9998955993626268,
+          0.9998682595098425,
+          0.9998818408564324,
+          0.9998783256106759,
+          0.9998513342337223,
+          0.9998685695571329,
+          0.9998624311830058,
+          0.9998811753804253,
+          0.999831836267756
+        ],
+        "min_cosine": 0.999831836267756,
+        "max_absolute_error": 0.003414670475356818,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 3.663280973190048,
+          "single_medium": 6.231360197804376,
+          "single_long": 5.711861481420283,
+          "batch8_short": 4.956702213498755,
+          "batch8_medium": 5.626353851299422,
+          "batch32_short": 4.839843749509289,
+          "batch_mixed": 6.279910667120803
+        },
+        "performance_pass": false
+      }
+    },
+    {
+      "directory": "minilm-managed-keys",
+      "timestamp": "2026-09-15T01:07:17Z",
+      "prewarm_seconds": 2.0,
+      "warmup": 5,
+      "repeats": 20,
+      "minimum_measure_seconds": 1.0,
+      "connection_mode": "persistent-per-thread",
+      "comparison": {
+        "cosines": [
+          0.9998771455636069,
+          0.9999157830569417,
+          0.9999359640792249,
+          0.999882513464368,
+          0.9998956453552481,
+          0.9998682596149066,
+          0.9998818394233876,
+          0.9998758253733202,
+          0.999840466136781,
+          0.9998645138635267,
+          0.999862431118225,
+          0.9998803864830005,
+          0.9998318362603653
+        ],
+        "min_cosine": 0.9998318362603653,
+        "max_absolute_error": 0.003322734475356817,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 1.483715250083858,
+          "single_medium": 0.9592657343244432,
+          "single_long": 1.0383578602866321,
+          "batch8_short": 0.7857768537049752,
+          "batch8_medium": 0.9196403428848935,
+          "batch32_short": 0.7745260200437084,
+          "batch_mixed": 0.9660339878642873
+        },
+        "performance_pass": false
+      }
+    },
+    {
+      "directory": "minilm-managed-owned",
+      "timestamp": "2026-09-15T00:45:40Z",
+      "prewarm_seconds": 2.0,
+      "warmup": 1,
+      "repeats": 3,
+      "minimum_measure_seconds": 0,
+      "connection_mode": "persistent-per-thread",
+      "comparison": {
+        "cosines": [
+          0.9998771455876635,
+          0.9999161271494867,
+          0.999934979993581,
+          0.9998711784804581,
+          0.9998955993626268,
+          0.9998682595098425,
+          0.9998818408564324,
+          0.9998783256106759,
+          0.9998513342337223,
+          0.9998685695571329,
+          0.9998624311830058,
+          0.9998811753804253,
+          0.999831836267756
+        ],
+        "min_cosine": 0.999831836267756,
+        "max_absolute_error": 0.003414670475356818,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 1.1037873436181806,
+          "single_medium": 1.6578148640865904,
+          "single_long": 2.177064908374205,
+          "batch8_short": 1.2701907445337999,
+          "batch8_medium": 1.4736274077856175,
+          "batch32_short": 1.0790705246373653,
+          "batch_mixed": 1.564522594752183
+        },
+        "performance_pass": false
+      }
+    },
+    {
+      "directory": "minilm-managed-packed",
+      "timestamp": "2026-09-15T00:37:01Z",
+      "prewarm_seconds": 2.0,
+      "warmup": 1,
+      "repeats": 3,
+      "minimum_measure_seconds": 0,
+      "connection_mode": "persistent-per-thread",
+      "comparison": {
+        "cosines": [
+          0.9998771455876635,
+          0.9999161271494867,
+          0.999934979993581,
+          0.9998711784804581,
+          0.9998955993626268,
+          0.9998682595098425,
+          0.9998818408564324,
+          0.9998783256106759,
+          0.9998513342337223,
+          0.9998685695571329,
+          0.9998624311830058,
+          0.9998811753804253,
+          0.999831836267756
+        ],
+        "min_cosine": 0.999831836267756,
+        "max_absolute_error": 0.003414670475356818,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 1.816348669572208,
+          "single_medium": 9.674522301228343,
+          "single_long": 6.217523933196254,
+          "batch8_short": 4.434959164878997,
+          "batch8_medium": 6.0275453724565,
+          "batch32_short": 3.277578349803294,
+          "batch_mixed": 3.744154717499232
+        },
+        "performance_pass": false
+      }
+    },
+    {
+      "directory": "minilm-managed-pool8-diagnostic",
+      "timestamp": "2026-09-15T00:39:35Z",
+      "prewarm_seconds": 2.0,
+      "warmup": 1,
+      "repeats": 3,
+      "minimum_measure_seconds": 0,
+      "connection_mode": "persistent-per-thread",
+      "comparison": {
+        "cosines": [
+          0.9998771455876635,
+          0.9999161271494867,
+          0.999934979993581,
+          0.9998711784804581,
+          0.9998955993626268,
+          0.9998682595098425,
+          0.9998818408564324,
+          0.9998783256106759,
+          0.9998513342337223,
+          0.9998685695571329,
+          0.9998624311830058,
+          0.9998811753804253,
+          0.999831836267756
+        ],
+        "min_cosine": 0.999831836267756,
+        "max_absolute_error": 0.003414670475356818,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 1.3370603761960855,
+          "single_medium": 2.631521021351635,
+          "single_long": 5.2935239676476415,
+          "batch8_short": 2.2031471257983037,
+          "batch8_medium": 3.1340703642808165,
+          "batch32_short": 1.954196283760246,
+          "batch_mixed": 3.6586458607625376
+        },
+        "performance_pass": false
+      }
+    },
+    {
+      "directory": "minilm-metal-before-backend-optimization",
+      "timestamp": "2026-09-14T23:55:21Z",
+      "prewarm_seconds": null,
+      "warmup": 3,
+      "repeats": 10,
+      "minimum_measure_seconds": null,
+      "connection_mode": null,
+      "comparison": {
+        "cosines": [
+          0.9999999989859556,
+          0.9999999429540387,
+          0.9999999412819411,
+          0.9999999148037115,
+          1.0000000000000004,
+          0.9999999351550141,
+          0.9999999377822381,
+          0.9999999464782223,
+          1.0000000000000007,
+          0.9999999999999996,
+          0.9999999585885724,
+          0.9999999999999988,
+          1.0
+        ],
+        "min_cosine": 0.9999999148037115,
+        "max_absolute_error": 7.097280590724966e-05,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 1.3244300294173945,
+          "single_medium": 1.2517417159208348,
+          "single_long": 1.198782266985483,
+          "batch8_short": 1.109153760371171,
+          "batch8_medium": 0.9054726243226758,
+          "batch32_short": 1.016020047922777,
+          "batch_mixed": 0.7332064663548414
+        },
+        "performance_pass": false
+      }
+    },
+    {
+      "directory": "minilm-metal-before-compact",
+      "timestamp": "2026-09-15T00:04:05Z",
+      "prewarm_seconds": null,
+      "warmup": 3,
+      "repeats": 10,
+      "minimum_measure_seconds": null,
+      "connection_mode": null,
+      "comparison": {
+        "cosines": [
+          0.9999999989859624,
+          0.9999999429542711,
+          0.9999999412810809,
+          0.99999991480411,
+          0.9999999999999998,
+          0.9999999351548547,
+          0.9999999377819608,
+          0.9999999464769881,
+          1.0000000000000007,
+          0.999999999999998,
+          0.9999999585883375,
+          0.999999999999998,
+          1.0
+        ],
+        "min_cosine": 0.99999991480411,
+        "max_absolute_error": 7.097080590725072e-05,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 1.2419418305225658,
+          "single_medium": 1.079057868927809,
+          "single_long": 0.8820396272646702,
+          "batch8_short": 0.9202152140279046,
+          "batch8_medium": 0.7582870913671305,
+          "batch32_short": 1.0951921071433977,
+          "batch_mixed": 0.6834932624845778
+        },
+        "performance_pass": false
+      }
+    },
+    {
+      "directory": "minilm-metal-before-final",
+      "timestamp": "2026-09-15T00:17:56Z",
+      "prewarm_seconds": 2.0,
+      "warmup": 3,
+      "repeats": 15,
+      "minimum_measure_seconds": null,
+      "connection_mode": null,
+      "comparison": {
+        "cosines": [
+          0.9999999989859624,
+          0.9999999429542711,
+          0.9999999412810809,
+          0.99999991480411,
+          0.9999999999999998,
+          0.9999999351548547,
+          0.9999999377819608,
+          0.9999999464769881,
+          1.0000000000000007,
+          0.999999999999998,
+          0.9999999585883375,
+          0.999999999999998,
+          1.0
+        ],
+        "min_cosine": 0.99999991480411,
+        "max_absolute_error": 7.097080590725072e-05,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 0.7084612856197126,
+          "single_medium": 0.6725898096318785,
+          "single_long": 0.6590923167220851,
+          "batch8_short": 0.8604206820189155,
+          "batch8_medium": 0.8224067636805253,
+          "batch32_short": 1.052954403516947,
+          "batch_mixed": 0.9090296540075954
+        },
+        "performance_pass": false
+      }
+    },
+    {
+      "directory": "minilm-metal-before-final-assemblies",
+      "timestamp": "2026-09-15T01:14:31Z",
+      "prewarm_seconds": 10.0,
+      "warmup": 5,
+      "repeats": 20,
+      "minimum_measure_seconds": 1.0,
+      "connection_mode": "persistent-per-thread",
+      "comparison": {
+        "cosines": [
+          0.9999999989859624,
+          0.9999999429542711,
+          0.9999999412810809,
+          0.99999991480411,
+          0.9999999999999998,
+          0.9999999351548547,
+          0.9999999377819608,
+          0.9999999464769881,
+          1.0000000000000007,
+          0.999999999999998,
+          0.9999999585883375,
+          0.999999999999998,
+          1.0
+        ],
+        "min_cosine": 0.99999991480411,
+        "max_absolute_error": 7.097080590725072e-05,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 0.6198508314076052,
+          "single_medium": 0.7494431900462908,
+          "single_long": 0.7346569821579978,
+          "batch8_short": 0.807100200442375,
+          "batch8_medium": 0.559404240065673,
+          "batch32_short": 0.6632543618000961,
+          "batch_mixed": 0.6637719179930989
+        },
+        "performance_pass": true
+      }
+    },
+    {
+      "directory": "minilm-metal-before-runtime-warmup",
+      "timestamp": "2026-09-15T00:41:40Z",
+      "prewarm_seconds": 2.0,
+      "warmup": 5,
+      "repeats": 20,
+      "minimum_measure_seconds": 1.0,
+      "connection_mode": "persistent-per-thread",
+      "comparison": {
+        "cosines": [
+          0.9999999989859624,
+          0.9999999429542711,
+          0.9999999412810809,
+          0.99999991480411,
+          0.9999999999999998,
+          0.9999999351548547,
+          0.9999999377819608,
+          0.9999999464769881,
+          1.0000000000000007,
+          0.999999999999998,
+          0.9999999585883375,
+          0.999999999999998,
+          1.0
+        ],
+        "min_cosine": 0.99999991480411,
+        "max_absolute_error": 7.097080590725072e-05,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 0.7171178157916351,
+          "single_medium": 0.6315380305952223,
+          "single_long": 0.6059594261445578,
+          "batch8_short": 0.6784998348854869,
+          "batch8_medium": 0.6181691438453119,
+          "batch32_short": 0.7750008368761638,
+          "batch_mixed": 0.6327956298578035
+        },
+        "performance_pass": true
+      }
+    },
+    {
+      "directory": "minilm-metal-before-sustained",
+      "timestamp": "2026-09-15T00:33:33Z",
+      "prewarm_seconds": 2.0,
+      "warmup": 5,
+      "repeats": 20,
+      "minimum_measure_seconds": null,
+      "connection_mode": "persistent-per-thread",
+      "comparison": {
+        "cosines": [
+          0.9999999989859624,
+          0.9999999429542711,
+          0.9999999412810809,
+          0.99999991480411,
+          0.9999999999999998,
+          0.9999999351548547,
+          0.9999999377819608,
+          0.9999999464769881,
+          1.0000000000000007,
+          0.999999999999998,
+          0.9999999585883375,
+          0.999999999999998,
+          1.0
+        ],
+        "min_cosine": 0.99999991480411,
+        "max_absolute_error": 7.097080590725072e-05,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 0.8756121603506747,
+          "single_medium": 0.9167144125789168,
+          "single_long": 1.335014330408857,
+          "batch8_short": 1.193933218944334,
+          "batch8_medium": 0.7817882115922068,
+          "batch32_short": 1.1704554867445776,
+          "batch_mixed": 0.6578490303113386
+        },
+        "performance_pass": false
+      }
+    },
+    {
+      "directory": "snowflake-cpu-before-backend-optimization",
+      "timestamp": "2026-09-14T23:56:48Z",
+      "prewarm_seconds": null,
+      "warmup": 3,
+      "repeats": 5,
+      "minimum_measure_seconds": null,
+      "connection_mode": null,
+      "comparison": {
+        "cosines": [
+          0.9997160584231299,
+          0.9996667861582427,
+          0.999704980298192,
+          0.9998172559137287,
+          0.9997193083308348,
+          0.9997761603157581,
+          0.9997106960812087,
+          0.9995927318917053,
+          0.9996048737815045,
+          0.9995395622224081,
+          0.9997645006291809,
+          0.999618615238957,
+          0.9996622875698681
+        ],
+        "min_cosine": 0.9995395622224081,
+        "max_absolute_error": 0.003431868104705804,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 2.448931285956669,
+          "single_medium": 1.7596899584536967,
+          "single_long": 1.727396975456885,
+          "batch8_short": 2.729081497212475,
+          "batch8_medium": 1.7897189254873935,
+          "batch32_short": 2.8119579936764048,
+          "batch_mixed": 4.2118304189177085
+        },
+        "performance_pass": false
+      }
+    },
+    {
+      "directory": "snowflake-cpu-before-compact",
+      "timestamp": "2026-09-15T00:04:07Z",
+      "prewarm_seconds": null,
+      "warmup": 3,
+      "repeats": 5,
+      "minimum_measure_seconds": null,
+      "connection_mode": null,
+      "comparison": {
+        "cosines": [
+          0.9997160584099889,
+          0.9996667862685835,
+          0.9997049803587774,
+          0.9998172560054769,
+          0.9997193082623614,
+          0.9997761604243506,
+          0.999710696086348,
+          0.9995927318214397,
+          0.9996048736909001,
+          0.9995395621989186,
+          0.9997645006889052,
+          0.9996186152678262,
+          0.9996622875307606
+        ],
+        "min_cosine": 0.9995395621989186,
+        "max_absolute_error": 0.003431868104705804,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 1.3787138280078932,
+          "single_medium": 1.0551188833596288,
+          "single_long": 1.003916159018787,
+          "batch8_short": 1.5036266844408517,
+          "batch8_medium": 0.9490714870104485,
+          "batch32_short": 1.4202286315062747,
+          "batch_mixed": 2.1473390737615157
+        },
+        "performance_pass": false
+      }
+    },
+    {
+      "directory": "snowflake-cpu-before-final",
+      "timestamp": "2026-09-15T00:18:03Z",
+      "prewarm_seconds": 2.0,
+      "warmup": 3,
+      "repeats": 10,
+      "minimum_measure_seconds": null,
+      "connection_mode": null,
+      "comparison": {
+        "cosines": [
+          0.9997160584099889,
+          0.9996667862685835,
+          0.9997049803587774,
+          0.9998172560054769,
+          0.9997193082623614,
+          0.9997761604243506,
+          0.999710696086348,
+          0.9995927318214397,
+          0.9996048736909001,
+          0.9995395621989186,
+          0.9997645006889052,
+          0.9996186152678262,
+          0.9996622875307606
+        ],
+        "min_cosine": 0.9995395621989186,
+        "max_absolute_error": 0.003431868104705804,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 0.9317221510796307,
+          "single_medium": 0.9769856121356648,
+          "single_long": 0.9704923598777885,
+          "batch8_short": 0.890764591974848,
+          "batch8_medium": 0.9083807973319721,
+          "batch32_short": 0.8881171245395472,
+          "batch_mixed": 0.9866529758325718
+        },
+        "performance_pass": true
+      }
+    },
+    {
+      "directory": "snowflake-cpu-before-final-assemblies",
+      "timestamp": "2026-09-15T01:12:46Z",
+      "prewarm_seconds": 10.0,
+      "warmup": 5,
+      "repeats": 20,
+      "minimum_measure_seconds": 1.0,
+      "connection_mode": "persistent-per-thread",
+      "comparison": {
+        "cosines": [
+          0.9997160584099889,
+          0.9996667862685835,
+          0.9997049803587774,
+          0.9998172560054769,
+          0.9997193082623614,
+          0.9997761604243506,
+          0.999710696086348,
+          0.9995927318214397,
+          0.9996048736909001,
+          0.9995395621989186,
+          0.9997645006889052,
+          0.9996186152678262,
+          0.9996622875307606
+        ],
+        "min_cosine": 0.9995395621989186,
+        "max_absolute_error": 0.003431868104705804,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 0.860005187353123,
+          "single_medium": 0.956813135404967,
+          "single_long": 0.9603979957688169,
+          "batch8_short": 0.8823633452041898,
+          "batch8_medium": 0.9099976675099567,
+          "batch32_short": 0.8833933601245407,
+          "batch_mixed": 1.0068780440453693
+        },
+        "performance_pass": true
+      }
+    },
+    {
+      "directory": "snowflake-cpu-before-runtime-warmup",
+      "timestamp": "2026-09-15T00:42:00Z",
+      "prewarm_seconds": 2.0,
+      "warmup": 5,
+      "repeats": 20,
+      "minimum_measure_seconds": 1.0,
+      "connection_mode": "persistent-per-thread",
+      "comparison": {
+        "cosines": [
+          0.9997160584099889,
+          0.9996667862685835,
+          0.9997049803587774,
+          0.9998172560054769,
+          0.9997193082623614,
+          0.9997761604243506,
+          0.999710696086348,
+          0.9995927318214397,
+          0.9996048736909001,
+          0.9995395621989186,
+          0.9997645006889052,
+          0.9996186152678262,
+          0.9996622875307606
+        ],
+        "min_cosine": 0.9995395621989186,
+        "max_absolute_error": 0.003431868104705804,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 1.0091237652515888,
+          "single_medium": 0.9431521563214547,
+          "single_long": 0.9522303539226038,
+          "batch8_short": 0.8504388964424293,
+          "batch8_medium": 0.8908852895705891,
+          "batch32_short": 0.8817764976884759,
+          "batch_mixed": 0.9955210923379441
+        },
+        "performance_pass": true
+      }
+    },
+    {
+      "directory": "snowflake-cpu-before-sustained",
+      "timestamp": "2026-09-15T00:33:40Z",
+      "prewarm_seconds": 2.0,
+      "warmup": 5,
+      "repeats": 20,
+      "minimum_measure_seconds": null,
+      "connection_mode": "persistent-per-thread",
+      "comparison": {
+        "cosines": [
+          0.9997160584099889,
+          0.9996667862685835,
+          0.9997049803587774,
+          0.9998172560054769,
+          0.9997193082623614,
+          0.9997761604243506,
+          0.999710696086348,
+          0.9995927318214397,
+          0.9996048736909001,
+          0.9995395621989186,
+          0.9997645006889052,
+          0.9996186152678262,
+          0.9996622875307606
+        ],
+        "min_cosine": 0.9995395621989186,
+        "max_absolute_error": 0.003431868104705804,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 0.925225323133475,
+          "single_medium": 0.9890776514185543,
+          "single_long": 0.9852105278897068,
+          "batch8_short": 0.8873001384083457,
+          "batch8_medium": 0.9031797943588569,
+          "batch32_short": 0.8704700449766348,
+          "batch_mixed": 0.9614817220145053
+        },
+        "performance_pass": true
+      }
+    },
+    {
+      "directory": "snowflake-managed-attention",
+      "timestamp": "2026-09-15T00:53:07Z",
+      "prewarm_seconds": 2.0,
+      "warmup": 5,
+      "repeats": 20,
+      "minimum_measure_seconds": 1.0,
+      "connection_mode": "persistent-per-thread",
+      "comparison": {
+        "cosines": [
+          0.9997387256296777,
+          0.9996573629559653,
+          0.9996810220819459,
+          0.9997912823251348,
+          0.9997766545359186,
+          0.9997014294210812,
+          0.9996950677340738,
+          0.999602835459276,
+          0.9995840477657922,
+          0.9996207080407532,
+          0.9998156380679697,
+          0.9997363172406221,
+          0.9996696147512746
+        ],
+        "min_cosine": 0.9995840477657922,
+        "max_absolute_error": 0.0031126697814187997,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 0.9524810965976547,
+          "single_medium": 0.9696219051533209,
+          "single_long": 1.1310848527555006,
+          "batch8_short": 0.8819695936258458,
+          "batch8_medium": 1.0124267543356718,
+          "batch32_short": 0.9146375282420616,
+          "batch_mixed": 1.1598969199313345
+        },
+        "performance_pass": false
+      }
+    },
+    {
+      "directory": "snowflake-managed-before-value-tiles",
+      "timestamp": "2026-09-15T01:10:02Z",
+      "prewarm_seconds": 10.0,
+      "warmup": 5,
+      "repeats": 20,
+      "minimum_measure_seconds": 1.0,
+      "connection_mode": "persistent-per-thread",
+      "comparison": {
+        "cosines": [
+          0.9997660861237294,
+          0.9996047031151717,
+          0.9997508383312089,
+          0.9998103403925718,
+          0.9997448365891107,
+          0.9997130570199765,
+          0.9997322734900317,
+          0.9996718430170713,
+          0.9996482891868002,
+          0.9994372584738791,
+          0.9998004767069041,
+          0.9995573448356454,
+          0.9997198049002856
+        ],
+        "min_cosine": 0.9994372584738791,
+        "max_absolute_error": 0.0042823112643814165,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 0.8235319623161316,
+          "single_medium": 0.892098773422811,
+          "single_long": 1.0388985011089535,
+          "batch8_short": 0.8761290357196085,
+          "batch8_medium": 0.9640550828560158,
+          "batch32_short": 0.8875161858142193,
+          "batch_mixed": 0.9777666148829112
+        },
+        "performance_pass": true
+      }
+    },
+    {
+      "directory": "snowflake-managed-full-context-before-head-major",
+      "timestamp": "2026-09-15T01:42:19Z",
+      "prewarm_seconds": 10.0,
+      "warmup": 2,
+      "repeats": 3,
+      "minimum_measure_seconds": 0,
+      "connection_mode": "persistent-per-thread",
+      "comparison": {
+        "cosines": [
+          0.9996989967433212,
+          0.9997219651791037,
+          0.9996802168767145,
+          0.9998068817876224,
+          0.9997272713679825,
+          0.9997586604225637,
+          0.9996782499657284,
+          0.9997111919118667,
+          0.9996019334374181,
+          0.9994372584738791,
+          0.9998004767069041,
+          0.9996531180561182,
+          0.9997253296539174
+        ],
+        "min_cosine": 0.9994372584738791,
+        "max_absolute_error": 0.003880757711294175,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_full_context_8192": 1.5359184869110651
+        },
+        "performance_pass": false,
+        "extra_scenarios": {
+          "single_full_context_8192": {
+            "min_cosine": 0.9999152738440099,
+            "prompt_tokens": 8192
+          }
+        }
+      }
+    },
+    {
+      "directory": "snowflake-managed-initial",
+      "timestamp": "2026-09-15T00:30:41Z",
+      "prewarm_seconds": 2.0,
+      "warmup": 1,
+      "repeats": 3,
+      "minimum_measure_seconds": null,
+      "connection_mode": "persistent-per-thread",
+      "comparison": {
+        "cosines": [
+          0.9997468113216391,
+          0.9996670018943785,
+          0.9996264681016336,
+          0.9997974787949806,
+          0.9997707401478827,
+          0.9997930724795975,
+          0.9997138798923282,
+          0.9996762142222082,
+          0.9996634870539477,
+          0.9996360887436949,
+          0.9997914338566489,
+          0.9997111541770303,
+          0.9996696147512746
+        ],
+        "min_cosine": 0.9996264681016336,
+        "max_absolute_error": 0.003604815440788268,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 6.801643557010145,
+          "single_medium": 7.784603384088945,
+          "single_long": 7.270324174958146,
+          "batch8_short": 7.700706407533365,
+          "batch8_medium": 7.385338630976395,
+          "batch32_short": 7.619720558152849,
+          "batch_mixed": 7.230388275686018
+        },
+        "performance_pass": false
+      }
+    },
+    {
+      "directory": "snowflake-managed-keys",
+      "timestamp": "2026-09-15T01:07:37Z",
+      "prewarm_seconds": 2.0,
+      "warmup": 5,
+      "repeats": 20,
+      "minimum_measure_seconds": 1.0,
+      "connection_mode": "persistent-per-thread",
+      "comparison": {
+        "cosines": [
+          0.9997660861237294,
+          0.9996047031151717,
+          0.9997508383312089,
+          0.9998103403925718,
+          0.9997448365891107,
+          0.9997130570199765,
+          0.9997322734900317,
+          0.9996718430170713,
+          0.9996482891868002,
+          0.9994372584738791,
+          0.9998004767069041,
+          0.9995573448356454,
+          0.9997198049002856
+        ],
+        "min_cosine": 0.9994372584738791,
+        "max_absolute_error": 0.0042823112643814165,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 0.9321224378012574,
+          "single_medium": 0.9204437563996382,
+          "single_long": 1.0236697437467006,
+          "batch8_short": 0.8629675531399646,
+          "batch8_medium": 0.9448409081015225,
+          "batch32_short": 0.8683282582058935,
+          "batch_mixed": 0.9738378182423854
+        },
+        "performance_pass": true
+      }
+    },
+    {
+      "directory": "snowflake-managed-owned",
+      "timestamp": "2026-09-15T00:45:46Z",
+      "prewarm_seconds": 2.0,
+      "warmup": 1,
+      "repeats": 3,
+      "minimum_measure_seconds": 0,
+      "connection_mode": "persistent-per-thread",
+      "comparison": {
+        "cosines": [
+          0.9997468113216391,
+          0.9996670018943785,
+          0.9996264681016336,
+          0.9997974787949806,
+          0.9997707401478827,
+          0.9997930724795975,
+          0.9997138798923282,
+          0.9996762142222082,
+          0.9996634870539477,
+          0.9996360887436949,
+          0.9997914338566489,
+          0.9997111541770303,
+          0.9996696147512746
+        ],
+        "min_cosine": 0.9996264681016336,
+        "max_absolute_error": 0.003604815440788268,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 0.9761736132800627,
+          "single_medium": 1.2654919248754948,
+          "single_long": 1.9159690391076096,
+          "batch8_short": 1.0905608704449288,
+          "batch8_medium": 1.2702640150731817,
+          "batch32_short": 0.9504663757029392,
+          "batch_mixed": 1.4134639692385709
+        },
+        "performance_pass": false
+      }
+    },
+    {
+      "directory": "snowflake-managed-packed",
+      "timestamp": "2026-09-15T00:37:08Z",
+      "prewarm_seconds": 2.0,
+      "warmup": 1,
+      "repeats": 3,
+      "minimum_measure_seconds": 0,
+      "connection_mode": "persistent-per-thread",
+      "comparison": {
+        "cosines": [
+          0.9997468113216391,
+          0.9996670018943785,
+          0.9996264681016336,
+          0.9997974787949806,
+          0.9997707401478827,
+          0.9997930724795975,
+          0.9997138798923282,
+          0.9996762142222082,
+          0.9996634870539477,
+          0.9996360887436949,
+          0.9997914338566489,
+          0.9997111541770303,
+          0.9996696147512746
+        ],
+        "min_cosine": 0.9996264681016336,
+        "max_absolute_error": 0.003604815440788268,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 1.8712394000660066,
+          "single_medium": 4.494525962276094,
+          "single_long": 2.592826795861695,
+          "batch8_short": 2.017982105088431,
+          "batch8_medium": 1.9199492112075176,
+          "batch32_short": 1.899574501211072,
+          "batch_mixed": 1.8790033171132556
+        },
+        "performance_pass": false
+      }
+    },
+    {
+      "directory": "snowflake-managed-pool8-diagnostic",
+      "timestamp": "2026-09-15T00:39:43Z",
+      "prewarm_seconds": 2.0,
+      "warmup": 1,
+      "repeats": 3,
+      "minimum_measure_seconds": 0,
+      "connection_mode": "persistent-per-thread",
+      "comparison": {
+        "cosines": [
+          0.9997468113216391,
+          0.9996670018943785,
+          0.9996264681016336,
+          0.9997974787949806,
+          0.9997707401478827,
+          0.9997930724795975,
+          0.9997138798923282,
+          0.9996762142222082,
+          0.9996634870539477,
+          0.9996360887436949,
+          0.9997914338566489,
+          0.9997111541770303,
+          0.9996696147512746
+        ],
+        "min_cosine": 0.9996264681016336,
+        "max_absolute_error": 0.003604815440788268,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 1.1430877266960546,
+          "single_medium": 1.5600811007566588,
+          "single_long": 2.041968676064638,
+          "batch8_short": 1.1570509557447692,
+          "batch8_medium": 1.3474119476756128,
+          "batch32_short": 1.0559380418130178,
+          "batch_mixed": 1.5058862895856315
+        },
+        "performance_pass": false
+      }
+    },
+    {
+      "directory": "snowflake-metal-before-backend-optimization",
+      "timestamp": "2026-09-14T23:55:12Z",
+      "prewarm_seconds": null,
+      "warmup": 3,
+      "repeats": 10,
+      "minimum_measure_seconds": null,
+      "connection_mode": null,
+      "comparison": {
+        "cosines": [
+          0.9999996900946312,
+          0.9999994679030147,
+          0.9999995486388825,
+          0.9999998101072733,
+          0.9999997274555997,
+          0.9999997511568747,
+          0.9999996431756921,
+          0.9999996800255037,
+          0.9999995267707826,
+          1.0000000000000007,
+          0.9999998625642863,
+          0.9999997002520347,
+          1.0000000000000007
+        ],
+        "min_cosine": 0.9999994679030147,
+        "max_absolute_error": 0.00014476229124069095,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 0.8874683704835763,
+          "single_medium": 0.9622978596400413,
+          "single_long": 0.9647546531004209,
+          "batch8_short": 0.9536061081850558,
+          "batch8_medium": 0.9796391238986772,
+          "batch32_short": 1.022110537139791,
+          "batch_mixed": 0.9997100190439925
+        },
+        "performance_pass": true
+      }
+    },
+    {
+      "directory": "snowflake-metal-before-compact",
+      "timestamp": "2026-09-15T00:03:56Z",
+      "prewarm_seconds": null,
+      "warmup": 3,
+      "repeats": 10,
+      "minimum_measure_seconds": null,
+      "connection_mode": null,
+      "comparison": {
+        "cosines": [
+          0.999999690093758,
+          0.9999994679031341,
+          0.9999995486396775,
+          0.9999998101080249,
+          0.999999727455972,
+          0.9999997511586777,
+          0.9999996431739728,
+          0.9999996800248966,
+          0.9999995267691908,
+          1.0000000000000002,
+          0.9999998625645018,
+          0.9999997002526196,
+          0.9999999999999987
+        ],
+        "min_cosine": 0.9999994679031341,
+        "max_absolute_error": 0.00014476229124069095,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 0.924597806711742,
+          "single_medium": 0.9732535370700119,
+          "single_long": 0.954472019632819,
+          "batch8_short": 0.9580800747584755,
+          "batch8_medium": 0.9666803251487427,
+          "batch32_short": 1.0238972953499055,
+          "batch_mixed": 1.005140367112825
+        },
+        "performance_pass": true
+      }
+    },
+    {
+      "directory": "snowflake-metal-before-final",
+      "timestamp": "2026-09-15T00:17:41Z",
+      "prewarm_seconds": 2.0,
+      "warmup": 3,
+      "repeats": 15,
+      "minimum_measure_seconds": null,
+      "connection_mode": null,
+      "comparison": {
+        "cosines": [
+          0.999999690093758,
+          0.9999994679031341,
+          0.9999995486396775,
+          0.9999998101080249,
+          0.999999727455972,
+          0.9999997511586777,
+          0.9999996431739728,
+          0.9999996800248966,
+          0.9999995267691908,
+          1.0000000000000002,
+          0.9999998625645018,
+          0.9999997002526196,
+          0.9999999999999987
+        ],
+        "min_cosine": 0.9999994679031341,
+        "max_absolute_error": 0.00014476229124069095,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 0.9273958268426566,
+          "single_medium": 0.976126025801385,
+          "single_long": 0.9622080339068331,
+          "batch8_short": 0.994409643280982,
+          "batch8_medium": 0.9337448935451628,
+          "batch32_short": 0.8516746036070565,
+          "batch_mixed": 0.963987226804018
+        },
+        "performance_pass": true
+      }
+    },
+    {
+      "directory": "snowflake-metal-before-final-assemblies",
+      "timestamp": "2026-09-15T01:15:06Z",
+      "prewarm_seconds": 10.0,
+      "warmup": 5,
+      "repeats": 20,
+      "minimum_measure_seconds": 1.0,
+      "connection_mode": "persistent-per-thread",
+      "comparison": {
+        "cosines": [
+          0.999999690093758,
+          0.9999994679031341,
+          0.9999995486396775,
+          0.9999998101080249,
+          0.999999727455972,
+          0.9999997511586777,
+          0.9999996431739728,
+          0.9999996800248966,
+          0.9999995267691908,
+          1.0000000000000002,
+          0.9999998625645018,
+          0.9999997002526196,
+          0.9999999999999987
+        ],
+        "min_cosine": 0.9999994679031341,
+        "max_absolute_error": 0.00014476229124069095,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 0.8896869457800167,
+          "single_medium": 0.9454553085793479,
+          "single_long": 0.935629062298802,
+          "batch8_short": 0.8538870105654002,
+          "batch8_medium": 0.9179692328700364,
+          "batch32_short": 0.8460096578613683,
+          "batch_mixed": 0.9595551549276037
+        },
+        "performance_pass": true
+      }
+    },
+    {
+      "directory": "snowflake-metal-before-packed",
+      "timestamp": "2026-09-14T23:50:00Z",
+      "prewarm_seconds": null,
+      "warmup": 3,
+      "repeats": 10,
+      "minimum_measure_seconds": null,
+      "connection_mode": null,
+      "comparison": {
+        "cosines": [
+          0.9999995929539505,
+          0.99999950253521,
+          0.9999995486388825,
+          0.9999997572062007,
+          1.0000000000000013,
+          0.9999997230291292,
+          0.9999996363712611,
+          0.9999996506336192,
+          0.9999996670144211,
+          1.0000000000000007,
+          0.9999997802721934,
+          0.9999997559729431,
+          1.0000000000000007
+        ],
+        "min_cosine": 0.99999950253521,
+        "max_absolute_error": 0.00012519906422038107,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 0.9039591140557638,
+          "single_medium": 0.9676638874639882,
+          "single_long": 0.9548770684904718,
+          "batch8_short": 0.9766065440424114,
+          "batch8_medium": 0.9715345863685374,
+          "batch32_short": 1.0136372957963637,
+          "batch_mixed": 1.4546066060666907
+        },
+        "performance_pass": false
+      }
+    },
+    {
+      "directory": "snowflake-metal-before-runtime-warmup",
+      "timestamp": "2026-09-15T00:41:14Z",
+      "prewarm_seconds": 2.0,
+      "warmup": 5,
+      "repeats": 20,
+      "minimum_measure_seconds": 1.0,
+      "connection_mode": "persistent-per-thread",
+      "comparison": {
+        "cosines": [
+          0.999999690093758,
+          0.9999994679031341,
+          0.9999995486396775,
+          0.9999998101080249,
+          0.999999727455972,
+          0.9999997511586777,
+          0.9999996431739728,
+          0.9999996800248966,
+          0.9999995267691908,
+          1.0000000000000002,
+          0.9999998625645018,
+          0.9999997002526196,
+          0.9999999999999987
+        ],
+        "min_cosine": 0.9999994679031341,
+        "max_absolute_error": 0.00014476229124069095,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 0.9021475212748287,
+          "single_medium": 0.9552135349380834,
+          "single_long": 0.9486373126464693,
+          "batch8_short": 0.8582448997866542,
+          "batch8_medium": 0.9087604444233568,
+          "batch32_short": 0.8355868857438618,
+          "batch_mixed": 0.9621165668846058
+        },
+        "performance_pass": true
+      }
+    },
+    {
+      "directory": "snowflake-metal-before-sustained",
+      "timestamp": "2026-09-15T00:33:15Z",
+      "prewarm_seconds": 2.0,
+      "warmup": 5,
+      "repeats": 20,
+      "minimum_measure_seconds": null,
+      "connection_mode": "persistent-per-thread",
+      "comparison": {
+        "cosines": [
+          0.999999690093758,
+          0.9999994679031341,
+          0.9999995486396775,
+          0.9999998101080249,
+          0.999999727455972,
+          0.9999997511586777,
+          0.9999996431739728,
+          0.9999996800248966,
+          0.9999995267691908,
+          1.0000000000000002,
+          0.9999998625645018,
+          0.9999997002526196,
+          0.9999999999999987
+        ],
+        "min_cosine": 0.9999994679031341,
+        "max_absolute_error": 0.00014476229124069095,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 0.9186726867626263,
+          "single_medium": 0.9386396049425605,
+          "single_long": 0.9382057963569905,
+          "batch8_short": 0.9366766802629936,
+          "batch8_medium": 0.9644083835654826,
+          "batch32_short": 0.842564477782233,
+          "batch_mixed": 0.9509849440789324
+        },
+        "performance_pass": true
+      }
+    },
+    {
+      "directory": "snowflake-metal-initial",
+      "timestamp": "2026-09-14T23:45:25Z",
+      "prewarm_seconds": null,
+      "warmup": 3,
+      "repeats": 10,
+      "minimum_measure_seconds": null,
+      "connection_mode": null,
+      "comparison": {
+        "cosines": [
+          0.9999996638503681,
+          0.9999995782761605,
+          1.0000000000000007,
+          0.9999997148548173,
+          0.9999997270074689,
+          0.9999997396163581,
+          0.999999821073917,
+          0.9999995168889039,
+          0.9999996337116293,
+          0.999998371733137,
+          0.9999996918375178,
+          0.9999992588844195,
+          0.9999979918954338
+        ],
+        "min_cosine": 0.9999979918954338,
+        "max_absolute_error": 0.00024295626367568796,
+        "latency_ratio_tensorsharp_over_llama": {
+          "single_short": 1.0795067933183091,
+          "single_medium": 1.142361679101742,
+          "single_long": 1.0750606036379724,
+          "batch8_short": 0.2570858686138183,
+          "batch8_medium": 0.7162475575589149,
+          "batch32_short": 0.12481461762725402,
+          "batch_mixed": 0.9299146682783664
+        },
+        "performance_pass": false
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "minilm-cpu-before-backend-optimization/llama.log",
+      "bytes": 162706,
+      "sha256": "52312c352e7138ea16366daddca9585609c70ce0790438321f63e77a2fbd6f8d"
+    },
+    {
+      "path": "minilm-cpu-before-backend-optimization/results.json",
+      "bytes": 620547,
+      "sha256": "f286c07ee544bb8ba6c614c5104d06037e5de683460812e61093ffd89ba3714e"
+    },
+    {
+      "path": "minilm-cpu-before-backend-optimization/tensorsharp.log",
+      "bytes": 36460,
+      "sha256": "08bc22f41e989aa419800dfd5d51b8e57f531b7c4487717b5d67f35563b86abf"
+    },
+    {
+      "path": "minilm-cpu-before-compact/llama.log",
+      "bytes": 162706,
+      "sha256": "352f66d4f06f3873336ae3155b149303e1b54dffb14094082360dbfb427fe679"
+    },
+    {
+      "path": "minilm-cpu-before-compact/results.json",
+      "bytes": 620553,
+      "sha256": "2c07763edfbe611608d780003b665456ca4387f6f8ec60a179aa28991cc93c67"
+    },
+    {
+      "path": "minilm-cpu-before-compact/tensorsharp.log",
+      "bytes": 37858,
+      "sha256": "abf73d8e1bc21b3a6bfac0428ec23bc3776cc27c5faac677e9aa1040ed17a904"
+    },
+    {
+      "path": "minilm-cpu-before-final/llama.log",
+      "bytes": 761818,
+      "sha256": "f692360edbc4b5a85d73ab0bdae84be2d0af79886d09c6269bceb2407ad42fb7"
+    },
+    {
+      "path": "minilm-cpu-before-final/results.json",
+      "bytes": 623026,
+      "sha256": "3c7d1970ca965af04c959a24d19b356eafaf807ceebf661856e32d481005a882"
+    },
+    {
+      "path": "minilm-cpu-before-final/tensorsharp.log",
+      "bytes": 543456,
+      "sha256": "2880c55155c2f8f913a6cfb368642afa5e698f162466270b26e0d4c9ad7c9b3c"
+    },
+    {
+      "path": "minilm-cpu-before-final-assemblies/llama.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "minilm-cpu-before-final-assemblies/results.json",
+      "bytes": 749638,
+      "sha256": "943968f0a815c96a48ce8ca2f5f78508c0ee533e9a5cbcc83d99fff724fd9553"
+    },
+    {
+      "path": "minilm-cpu-before-final-assemblies/tensorsharp.log",
+      "bytes": 4890,
+      "sha256": "c88be3a4f43c74902bd9f68f260514d7e90cafdda7293b5bfb6ff481afdf9892"
+    },
+    {
+      "path": "minilm-cpu-before-runtime-warmup/llama.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "minilm-cpu-before-runtime-warmup/results.json",
+      "bytes": 702958,
+      "sha256": "5954b91fa6c9074d4ce3002f95bb0dcbaa7ee9f9dba3576ad64ad8f92658a286"
+    },
+    {
+      "path": "minilm-cpu-before-runtime-warmup/tensorsharp.log",
+      "bytes": 4890,
+      "sha256": "9677cb7f517219dc04b7be98c51c5b24fd42f6cf26a8a75bb5c96ddca64015a9"
+    },
+    {
+      "path": "minilm-cpu-before-sustained/llama.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "minilm-cpu-before-sustained/results.json",
+      "bytes": 627596,
+      "sha256": "729be0c7474b2932ce0dac013391dbb89677d1c9970c0c310e434afb471f1c71"
+    },
+    {
+      "path": "minilm-cpu-before-sustained/tensorsharp.log",
+      "bytes": 4890,
+      "sha256": "af47a7f76bb4ff2e732b4fab83b6455644ef03e93a4b99f9bea079b7ee05d95a"
+    },
+    {
+      "path": "minilm-cpu-no-copies-quiet/llama.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "minilm-cpu-no-copies-quiet/results.json",
+      "bytes": 627559,
+      "sha256": "73b049167a5e6d19364d54d88e75381dbd66d982ecf14f299d7dde542191a4e4"
+    },
+    {
+      "path": "minilm-cpu-no-copies-quiet/tensorsharp.log",
+      "bytes": 4890,
+      "sha256": "668055c00bc9c20d2e12d0ffa3f3fe4a2985ab66b30f6dc44f6e765f85cf8c8e"
+    },
+    {
+      "path": "minilm-managed-attention/llama.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "minilm-managed-attention/results.json",
+      "bytes": 708740,
+      "sha256": "f53ab632c3e754ed617ad7f2b6cd66731c0151b08641cfc3c371cf0a3fa9d952"
+    },
+    {
+      "path": "minilm-managed-attention/tensorsharp.log",
+      "bytes": 3492,
+      "sha256": "a0489beae2ce70f289d2ce12b5ebd68fec58f8cb031ad57c773f3a6b91c831c6"
+    },
+    {
+      "path": "minilm-managed-before-value-tiles/llama.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "minilm-managed-before-value-tiles/results.json",
+      "bytes": 725373,
+      "sha256": "b109408c41d4aefc30e40fae269e16ea4740b80bca02db7443771f02896b325a"
+    },
+    {
+      "path": "minilm-managed-before-value-tiles/tensorsharp.log",
+      "bytes": 3492,
+      "sha256": "aaa01191f5606b1a9b86024149c8c63790b3f8f168edcec094c06f120e0fc2be"
+    },
+    {
+      "path": "minilm-managed-initial/llama.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "minilm-managed-initial/results.json",
+      "bytes": 619958,
+      "sha256": "ef2097879fd4f2a5c0ecbc0c353ac5528ef63d9aa864aaba5b43c185defd6810"
+    },
+    {
+      "path": "minilm-managed-initial/tensorsharp.log",
+      "bytes": 3492,
+      "sha256": "e471ddbbd0cbb98ab3f77445d8fa7f0369dabc9d0e51ac064b3d469e9fe8d514"
+    },
+    {
+      "path": "minilm-managed-keys/llama.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "minilm-managed-keys/results.json",
+      "bytes": 720975,
+      "sha256": "87578658e92895c8f230a6342261052fb7ac824dc3d81640f4cc5ea92c8062a2"
+    },
+    {
+      "path": "minilm-managed-keys/tensorsharp.log",
+      "bytes": 3492,
+      "sha256": "2f67a1d617ebcf636c34f97014dd3dde4fbe1d876d898243572f12da56dc19a7"
+    },
+    {
+      "path": "minilm-managed-owned/llama.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "minilm-managed-owned/results.json",
+      "bytes": 620430,
+      "sha256": "84993c1a7d700623036fb2ac265e2e5db89bba45def03c89ae12a73bd9d335a1"
+    },
+    {
+      "path": "minilm-managed-owned/tensorsharp.log",
+      "bytes": 3492,
+      "sha256": "256519956ed14b5d22487507be5aa1235654aa4e4334fe92bd156aa0f2b9c006"
+    },
+    {
+      "path": "minilm-managed-packed/llama.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "minilm-managed-packed/results.json",
+      "bytes": 620438,
+      "sha256": "f77d1cd41785eea2d68b5e3c5b1c3fd7a73838af0835a9421496dd10ee5e0e82"
+    },
+    {
+      "path": "minilm-managed-packed/tensorsharp.log",
+      "bytes": 3492,
+      "sha256": "5cb0eb8a2e15488a646a221c6beb0aec06f4e28fd1e5d9f9c57175f635ce72cd"
+    },
+    {
+      "path": "minilm-managed-pool8-diagnostic/llama.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "minilm-managed-pool8-diagnostic/results.json",
+      "bytes": 620475,
+      "sha256": "039123e81619d9567417058b141d6ec95d7842b82d88a280a231764149e75032"
+    },
+    {
+      "path": "minilm-managed-pool8-diagnostic/tensorsharp.log",
+      "bytes": 3492,
+      "sha256": "929a34a33e863e322bec355dbc8b4291c4cb0394777f2467100ebd25713c20e5"
+    },
+    {
+      "path": "minilm-metal-before-backend-optimization/llama.log",
+      "bytes": 256586,
+      "sha256": "b46d8531f8850e091f23051969575982a87e2ac806ca92b456bff6cf3a7fa61c"
+    },
+    {
+      "path": "minilm-metal-before-backend-optimization/results.json",
+      "bytes": 621725,
+      "sha256": "18369228365f92a049447431cc0acd117719e12c867c29430e393151b7325cdb"
+    },
+    {
+      "path": "minilm-metal-before-backend-optimization/tensorsharp.log",
+      "bytes": 60596,
+      "sha256": "3f887a30bd04cd415303014ec942d5babf02809a31abd93cb9f3165f3be0df1d"
+    },
+    {
+      "path": "minilm-metal-before-compact/llama.log",
+      "bytes": 256586,
+      "sha256": "fa6ce7fc7075b58ebdea8830dcb628aabea3cf9f57caf0a97869c106ca82811d"
+    },
+    {
+      "path": "minilm-metal-before-compact/results.json",
+      "bytes": 621792,
+      "sha256": "14b386a6d510172ff15a3e9c6311988dc82fb25e9c77d6dff41d8d4f20ece0ff"
+    },
+    {
+      "path": "minilm-metal-before-compact/tensorsharp.log",
+      "bytes": 60594,
+      "sha256": "1b2087e08ce7854cdeeabbb3a48f62968f89abba157a6a5b624b4d01ebfca172"
+    },
+    {
+      "path": "minilm-metal-before-final/llama.log",
+      "bytes": 599968,
+      "sha256": "52abc6ce116bfec447f5a3abfd2676322db7e610f7495f3e8193bcc07fab4114"
+    },
+    {
+      "path": "minilm-metal-before-final/results.json",
+      "bytes": 624206,
+      "sha256": "d08584124c18e76f9fc9f5da3a9afcfe7fd3759d5fcf5e2af9abe1e107f505ff"
+    },
+    {
+      "path": "minilm-metal-before-final/tensorsharp.log",
+      "bytes": 472719,
+      "sha256": "da6d5c6338457eb2d4e2eebda94b6f8b6ff68f6ee46e64326e6abbc0fe3bcc0e"
+    },
+    {
+      "path": "minilm-metal-before-final-assemblies/llama.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "minilm-metal-before-final-assemblies/results.json",
+      "bytes": 775198,
+      "sha256": "e4119cd97ce2fe487478ea80d9f93ebc27c1533b148e142194aa1313889191a2"
+    },
+    {
+      "path": "minilm-metal-before-final-assemblies/tensorsharp.log",
+      "bytes": 15360,
+      "sha256": "3e738deffaca6252a241555df1b5bee99b9d6b3e6bc09fab3b240e8a9a61b5ad"
+    },
+    {
+      "path": "minilm-metal-before-runtime-warmup/llama.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "minilm-metal-before-runtime-warmup/results.json",
+      "bytes": 748905,
+      "sha256": "a8bf269e270dde21bcd4ec5031823ce19fb46ca9dd4e2fa712e0c6f60df153f1"
+    },
+    {
+      "path": "minilm-metal-before-runtime-warmup/tensorsharp.log",
+      "bytes": 15360,
+      "sha256": "b7da19f0fe3edb446fee913402c7b7a424d8581728c655d0db51f99aef1f6530"
+    },
+    {
+      "path": "minilm-metal-before-sustained/llama.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "minilm-metal-before-sustained/results.json",
+      "bytes": 626578,
+      "sha256": "69c25da827b73b5409c6e9cef9bfd85cec653ae61d58ca997234f1d1279a78a2"
+    },
+    {
+      "path": "minilm-metal-before-sustained/tensorsharp.log",
+      "bytes": 15360,
+      "sha256": "dce4b1c044afce7dafcf3a9233b0537fd543220b7b1b43eeeee369294459d10e"
+    },
+    {
+      "path": "snowflake-cpu-before-backend-optimization/llama.log",
+      "bytes": 162410,
+      "sha256": "41e1f861505d1aa04637e86951fe13b475064e343961c5b9418ece8d25933f62"
+    },
+    {
+      "path": "snowflake-cpu-before-backend-optimization/results.json",
+      "bytes": 1617106,
+      "sha256": "dcf85b772f14a6620ef2e6ac5572bf6b357d733f8dbd4fa0411512fa5b545fa0"
+    },
+    {
+      "path": "snowflake-cpu-before-backend-optimization/tensorsharp.log",
+      "bytes": 36609,
+      "sha256": "bbcd7e67876f5ff18c1110238d0d5f89012c356ef71c65e7fe49f40eb1547be7"
+    },
+    {
+      "path": "snowflake-cpu-before-compact/llama.log",
+      "bytes": 162410,
+      "sha256": "9877479a55b89e7557c82a20142e176fa36192cce6aae5dcf3b7c83c0c918c86"
+    },
+    {
+      "path": "snowflake-cpu-before-compact/results.json",
+      "bytes": 1617261,
+      "sha256": "6fbbc4192857dc15acc8f0eefc11011e3f5935b1b1dbe6d6ec9f28e312a50055"
+    },
+    {
+      "path": "snowflake-cpu-before-compact/tensorsharp.log",
+      "bytes": 42229,
+      "sha256": "84b386e8075cad33ae54a9215458d3af0f4311435db20cf0a972e64464bc1302"
+    },
+    {
+      "path": "snowflake-cpu-before-final/llama.log",
+      "bytes": 316942,
+      "sha256": "06e01df838f763742bfe24ea63fcb22a639e8ffc71da66c3179eb81e6771124f"
+    },
+    {
+      "path": "snowflake-cpu-before-final/results.json",
+      "bytes": 1619653,
+      "sha256": "d64c6c96573ff42854d7f649ad19cb555dec9f7c6de6e24c62235cc940c915a7"
+    },
+    {
+      "path": "snowflake-cpu-before-final/tensorsharp.log",
+      "bytes": 118510,
+      "sha256": "67253554ee477c1d5829788444c2390c33d0ca68976208c361c4363027556feb"
+    },
+    {
+      "path": "snowflake-cpu-before-final-assemblies/llama.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "snowflake-cpu-before-final-assemblies/results.json",
+      "bytes": 1640989,
+      "sha256": "a9c39e6181b87604a076319e3f312de2039b14c60156a2ff5a21009d21fe4f28"
+    },
+    {
+      "path": "snowflake-cpu-before-final-assemblies/tensorsharp.log",
+      "bytes": 9140,
+      "sha256": "f8dd9d138b88bb396a7f817da6dbfc0ccc301eac1903b284b37ea2cdd1c5b742"
+    },
+    {
+      "path": "snowflake-cpu-before-runtime-warmup/llama.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "snowflake-cpu-before-runtime-warmup/results.json",
+      "bytes": 1628359,
+      "sha256": "a33142e6eab0889fa6288ca3c36be96c0b5c86a44b98de046eb70b5dfe14a449"
+    },
+    {
+      "path": "snowflake-cpu-before-runtime-warmup/tensorsharp.log",
+      "bytes": 9140,
+      "sha256": "b3d713b4f6bc9586c4046112925025bae335995ef5c7ea76eb9f84492558a009"
+    },
+    {
+      "path": "snowflake-cpu-before-sustained/llama.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "snowflake-cpu-before-sustained/results.json",
+      "bytes": 1624188,
+      "sha256": "3f9b62ee7e0a1803f6ef200f614110ba262f32fa40f9cd975a11f439b5df54f5"
+    },
+    {
+      "path": "snowflake-cpu-before-sustained/tensorsharp.log",
+      "bytes": 9140,
+      "sha256": "2fd45150c3f8ec902d5ce5df0d05d721c85cae49b3ce2f8a5da382e41b8badb1"
+    },
+    {
+      "path": "snowflake-managed-attention/llama.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "snowflake-managed-attention/results.json",
+      "bytes": 1629369,
+      "sha256": "76e6a046ac26819383d34d6da51c31eedc9e24a72ef43f19b3d53e03595f472f"
+    },
+    {
+      "path": "snowflake-managed-attention/tensorsharp.log",
+      "bytes": 3492,
+      "sha256": "927f57b1e3186b893c6b6397263326aa718eeff9d3639594bad25eee3fbe7e97"
+    },
+    {
+      "path": "snowflake-managed-before-value-tiles/llama.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "snowflake-managed-before-value-tiles/results.json",
+      "bytes": 1640745,
+      "sha256": "6f1e08865c8c8af15bba1e7257bbf514ff1604395a7ab0ceafbd0d9746dba140"
+    },
+    {
+      "path": "snowflake-managed-before-value-tiles/tensorsharp.log",
+      "bytes": 3492,
+      "sha256": "d99210d134a6daa601bfc0b2ad920f7748e1bcf205f5faa1f1d96882e3854c84"
+    },
+    {
+      "path": "snowflake-managed-full-context-before-head-major/llama.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "snowflake-managed-full-context-before-head-major/results.json",
+      "bytes": 1686580,
+      "sha256": "7fe081f0c69f3510e876a8478adff4eb184db8cc44b4b9b26007e9f20e21a88f"
+    },
+    {
+      "path": "snowflake-managed-full-context-before-head-major/tensorsharp.log",
+      "bytes": 3492,
+      "sha256": "8bf6f6288a4e552a9dd340ce73c2f2a08cc6d2a11fee1ac5353019a113544276"
+    },
+    {
+      "path": "snowflake-managed-initial/llama.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "snowflake-managed-initial/results.json",
+      "bytes": 1616568,
+      "sha256": "66e6a6028b1b01ba97e0629f34aa50e09aee36fec26a4c92d85338479eba86ee"
+    },
+    {
+      "path": "snowflake-managed-initial/tensorsharp.log",
+      "bytes": 3492,
+      "sha256": "6fc10f61a6a4e8001a9d32ef8cd52d8bc0cdbeb8e786e7d77fab7e9f5a61cae0"
+    },
+    {
+      "path": "snowflake-managed-keys/llama.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "snowflake-managed-keys/results.json",
+      "bytes": 1640289,
+      "sha256": "2f208ff4c64b555a7f93a36b8dfa0f111f888602fdeca52b8ead42c657eec7ef"
+    },
+    {
+      "path": "snowflake-managed-keys/tensorsharp.log",
+      "bytes": 3492,
+      "sha256": "ca5aa1999301d75763fc22e4d5ed00e07b9fdb3e8a915aa45facd7c0d5a9aa13"
+    },
+    {
+      "path": "snowflake-managed-owned/llama.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "snowflake-managed-owned/results.json",
+      "bytes": 1617038,
+      "sha256": "bcdd8faf223a059d92c04e8a08b35716842d8e516c242bfebcb674ac2fdba6e0"
+    },
+    {
+      "path": "snowflake-managed-owned/tensorsharp.log",
+      "bytes": 3492,
+      "sha256": "c2c4e0916adb2abe4a9d5194f3c2776fe2e8d6a2ce423cf44e19f45cc5c66317"
+    },
+    {
+      "path": "snowflake-managed-packed/llama.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "snowflake-managed-packed/results.json",
+      "bytes": 1617021,
+      "sha256": "86733a5ff645a2d9edf85256451087ff87dfa4f20613bfd4c02e984c4751a53f"
+    },
+    {
+      "path": "snowflake-managed-packed/tensorsharp.log",
+      "bytes": 3492,
+      "sha256": "f218bfbe9fdf6c076138de2a0e4d63372bdedf7dde3ef0d2e079d20452cfcbc3"
+    },
+    {
+      "path": "snowflake-managed-pool8-diagnostic/llama.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "snowflake-managed-pool8-diagnostic/results.json",
+      "bytes": 1617062,
+      "sha256": "673401df8483ca84cefb0b65aec33801383073d0ab8addd0ea729d7433c0a34c"
+    },
+    {
+      "path": "snowflake-managed-pool8-diagnostic/tensorsharp.log",
+      "bytes": 3492,
+      "sha256": "3d78993416ca08ce7cf83938b3b615fc59e1db31cb27ce0cd22ed2e8f5ad2b9f"
+    },
+    {
+      "path": "snowflake-metal-before-backend-optimization/llama.log",
+      "bytes": 256290,
+      "sha256": "67df2a4efe882ee3d088fafd697427655d7ea94509ca2285d12998f32e1e2829"
+    },
+    {
+      "path": "snowflake-metal-before-backend-optimization/results.json",
+      "bytes": 1619265,
+      "sha256": "f069f04eab6f1229881c8d9af447d64410432765b25a5ddcbf814fe6960e3bce"
+    },
+    {
+      "path": "snowflake-metal-before-backend-optimization/tensorsharp.log",
+      "bytes": 57885,
+      "sha256": "60563f2eed528742f472528fce30cea26148e17d502ac5836bb40853a7199022"
+    },
+    {
+      "path": "snowflake-metal-before-compact/llama.log",
+      "bytes": 256290,
+      "sha256": "6a8be029b91a465704643a84628819251471b31122fcc5de756e2589cc15cf13"
+    },
+    {
+      "path": "snowflake-metal-before-compact/results.json",
+      "bytes": 1619411,
+      "sha256": "983f33b1999ba485c56edc278cc63cba52105e82be7eecf402c2904ddf89b902"
+    },
+    {
+      "path": "snowflake-metal-before-compact/tensorsharp.log",
+      "bytes": 57887,
+      "sha256": "b5d08da45dc3939a9139f264589f420744820533eec9af79172428c1d6e86e8f"
+    },
+    {
+      "path": "snowflake-metal-before-final/llama.log",
+      "bytes": 411776,
+      "sha256": "c0533ad451480e53a9d158bf4b63edce90f134a8f751a914a24a18b110eaff6e"
+    },
+    {
+      "path": "snowflake-metal-before-final/results.json",
+      "bytes": 1621843,
+      "sha256": "676e4186c874d51734cb9a854882bd168e20e4f219bf2878431c19fd5fbccd34"
+    },
+    {
+      "path": "snowflake-metal-before-final/tensorsharp.log",
+      "bytes": 137139,
+      "sha256": "8ebf3fbc28abb1ac17724c1007c37d98f73a59fda5b4528c6af6fccda044a08d"
+    },
+    {
+      "path": "snowflake-metal-before-final-assemblies/llama.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "snowflake-metal-before-final-assemblies/results.json",
+      "bytes": 1649017,
+      "sha256": "0756dcba4a1d09777719ebffb8995619104d94619aac1838413e3d91e64b71f9"
+    },
+    {
+      "path": "snowflake-metal-before-final-assemblies/tensorsharp.log",
+      "bytes": 13254,
+      "sha256": "5a65d845be2c2635fd2f6483e13a92019d09639e080f0647f40bf4af6f9568ea"
+    },
+    {
+      "path": "snowflake-metal-before-packed/llama.log",
+      "bytes": 256290,
+      "sha256": "0481cb740373797eea9d2370461c8d809eb1c70a9fb2196e60b967e0e2d71b75"
+    },
+    {
+      "path": "snowflake-metal-before-packed/results.json",
+      "bytes": 1619213,
+      "sha256": "053c1e0fe2babbeb6dceff39f8aee18d872d9c6c8ea0b60b8afd8842330a3f27"
+    },
+    {
+      "path": "snowflake-metal-before-packed/tensorsharp.log",
+      "bytes": 58936,
+      "sha256": "f4a29b1fca2f1e47b0e67534e36d38de6c4460f2a638d90a8ba7bf86c882b654"
+    },
+    {
+      "path": "snowflake-metal-before-runtime-warmup/llama.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "snowflake-metal-before-runtime-warmup/results.json",
+      "bytes": 1637003,
+      "sha256": "e14d92eea961f49f97f43acd28444aae51ad4b3568619424da49e0d22a224747"
+    },
+    {
+      "path": "snowflake-metal-before-runtime-warmup/tensorsharp.log",
+      "bytes": 13254,
+      "sha256": "d46540a10881f46cfd170a8331d266907e787305f8761b4f59e95985a61f087b"
+    },
+    {
+      "path": "snowflake-metal-before-sustained/llama.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "snowflake-metal-before-sustained/results.json",
+      "bytes": 1624213,
+      "sha256": "f15e56aeea60407db9ada0755d7c89306a652e9de3d3f6e665fb09db49f4165f"
+    },
+    {
+      "path": "snowflake-metal-before-sustained/tensorsharp.log",
+      "bytes": 13254,
+      "sha256": "9c114f5b4eeb62b309ea26c74c9d1cac713fc7f1728dd523ea00d52897001254"
+    },
+    {
+      "path": "snowflake-metal-initial/llama.log",
+      "bytes": 258028,
+      "sha256": "8c681f5f3bc2e7bcb41496175a8aab1955f1b5e95566ff050f22d710e8609c50"
+    },
+    {
+      "path": "snowflake-metal-initial/results.json",
+      "bytes": 1619215,
+      "sha256": "0fbd6f4faedcbd2da3ccf239bbd10220c3bfebbd78ec9797b72dd20e1ee45566"
+    },
+    {
+      "path": "snowflake-metal-initial/tensorsharp.log",
+      "bytes": 58488,
+      "sha256": "467a35579f64ff7a998a6a2846b17840343b3e3414d6aae60d957661ffbd04e0"
+    }
+  ],
+  "extract_command": "mkdir -p /tmp/embedding-diagnostics && tar -xzf diagnostics.tar.gz -C /tmp/embedding-diagnostics"
+}

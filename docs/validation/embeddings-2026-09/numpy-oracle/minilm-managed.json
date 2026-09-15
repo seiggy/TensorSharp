@@ -1,0 +1,163 @@
+{
+  "purpose": "Independent mathematical BERT/XLM-R check on quantized GGUF weights; not MTEB or a speed benchmark.",
+  "implementation": "NumPy FP32 matmul, per-sequence bidirectional attention, layernorm, GELU, full final layer, metadata pooling and L2; gguf-py used only for format/dequantization.",
+  "model_file": "/Users/zhongkaifu/work/models/embeddings/all-MiniLM-L6-v2-Q8_0.gguf",
+  "model_sha256": "263215c3cadd6e16740741a7624ab4cbb6c8e777688bd5331ecfbf5681c2f8ed",
+  "oracle_script_sha256": "2299942862a1db434249b77419bd0f8cf7abff868cf918eb5fe27ed5d197ea27",
+  "reference_creation_script_sha256": "2299942862a1db434249b77419bd0f8cf7abff868cf918eb5fe27ed5d197ea27",
+  "gguf_py": "/Users/zhongkaifu/work/llama.cpp/gguf-py",
+  "token_fixture": "docs/validation/embeddings-2026-09/numpy-minilm-tokens.json",
+  "token_fixture_sha256": "604e4a44428591e5b89695867dd5921217435a440085dccde8097c9d65d9472b",
+  "selected_tokens_sha256": "bf895729edfec988644744330196643ff633c1c1b4fc4d538b988ebf5e5f3403",
+  "http_engine": "tensorsharp",
+  "http_results": "docs/validation/embeddings-2026-09/minilm-managed/results.json",
+  "http_results_sha256": "008c97b5f8fe68bfe344d7dbc4898c82331ace43e36bc7ccc41ee2904a1d4d91",
+  "reference_vectors": "docs/validation/embeddings-2026-09/numpy-oracle/minilm-metal.vectors.npz",
+  "reference_vectors_sha256": "e3341d38d7fce9e385157587922ebcebe6ec2bdf021585f3a837b9472e9ffe32",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "python": "3.13.15",
+  "numpy": "2.5.3",
+  "numpy_error_policy": {
+    "divide": "raise",
+    "over": "raise",
+    "under": "ignore",
+    "invalid": "raise"
+  },
+  "thread_environment": {
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  },
+  "gelu": "exact",
+  "thresholds": {
+    "min_cosine": 0.999,
+    "max_absolute_error": 0.005
+  },
+  "metadata": {
+    "dimensions": 384,
+    "heads": 12,
+    "layers": 6,
+    "layer_norm_epsilon": 9.999999960041972e-13,
+    "pooling": "mean",
+    "token_counts": [
+      11,
+      14,
+      24,
+      10,
+      18,
+      13
+    ],
+    "layer_seconds": [
+      0.010002583032473922,
+      0.010940250009298325,
+      0.009746875148266554,
+      0.010238792048767209,
+      0.009989375015720725,
+      0.0104523750487715
+    ]
+  },
+  "comparisons": [
+    {
+      "text": "query: find the function that adds two numbers",
+      "tokens": 11,
+      "cosine": 0.9997695559711319,
+      "max_absolute_error": 0.003234748089464187,
+      "rmse": 0.0010955497590315097,
+      "passed": true
+    },
+    {
+      "text": "def add(a, b):\n    return a + b",
+      "tokens": 14,
+      "cosine": 0.9998508150363343,
+      "max_absolute_error": 0.0029958601733379372,
+      "rmse": 0.0008814788779690299,
+      "passed": true
+    },
+    {
+      "text": "def read_file(path):\n    with open(path) as f:\n        return f.read()",
+      "tokens": 24,
+      "cosine": 0.9998467785687375,
+      "max_absolute_error": 0.0027550758218421872,
+      "rmse": 0.0008933242694564001,
+      "passed": true
+    },
+    {
+      "text": "query: read a text file from disk",
+      "tokens": 10,
+      "cosine": 0.9998368496028985,
+      "max_absolute_error": 0.003037960675894261,
+      "rmse": 0.0009218143171788072,
+      "passed": true
+    },
+    {
+      "text": "你好，世界！查找读取文件的函数。",
+      "tokens": 18,
+      "cosine": 0.9997708997545948,
+      "max_absolute_error": 0.003211456477785587,
+      "rmse": 0.001092350892971466,
+      "passed": true
+    },
+    {
+      "text": "Café naïve résumé — Straße ﬁ ﬃ ＡＢＣ é 😀",
+      "tokens": 13,
+      "cosine": 0.9997280623156327,
+      "max_absolute_error": 0.0036530044081707,
+      "rmse": 0.0011901017312067536,
+      "passed": true
+    }
+  ],
+  "retrieval": [
+    {
+      "query": "query: find the function that adds two numbers",
+      "document_indices": [
+        1,
+        2
+      ],
+      "numpy_scores": {
+        "1": 0.552055080426672,
+        "2": -0.02342371773558917
+      },
+      "http_scores": {
+        "1": 0.5533666981345441,
+        "2": -0.021548160424676117
+      },
+      "numpy_order": [
+        1,
+        2
+      ],
+      "http_order": [
+        1,
+        2
+      ],
+      "same_order": true
+    },
+    {
+      "query": "query: read a text file from disk",
+      "document_indices": [
+        1,
+        2
+      ],
+      "numpy_scores": {
+        "1": -0.1325937160091858,
+        "2": 0.4805552565841307
+      },
+      "http_scores": {
+        "1": -0.13140029285060142,
+        "2": 0.480347976629323
+      },
+      "numpy_order": [
+        2,
+        1
+      ],
+      "http_order": [
+        2,
+        1
+      ],
+      "same_order": true
+    }
+  ],
+  "minimum_cosine": 0.9997280623156327,
+  "maximum_absolute_error": 0.0036530044081707,
+  "passed": true,
+  "elapsed_seconds": 0.021654250100255013
+}

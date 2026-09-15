@@ -1,0 +1,44 @@
+{
+  "timestamp": "2026-09-14T19:39:13-0700",
+  "trx": "InferenceWeb.Tests/TestResults/embedding-dispatcher-focused.trx",
+  "counts": {
+    "total": 83,
+    "passed": 83,
+    "failed": 0,
+    "notExecuted": 0
+  },
+  "new_dispatcher_test_cases": 17,
+  "commands": [
+    "dotnet build InferenceWeb.Tests/InferenceWeb.Tests.csproj -c Release --no-restore -p:TensorSharpSkipGgmlNative=true -p:TensorSharpSkipMlxNative=true -clp:ErrorsOnly",
+    "dotnet test InferenceWeb.Tests/InferenceWeb.Tests.csproj -c Release --no-build --no-restore --filter 'FullyQualifiedName~EmbeddingRequestDispatcherTests|FullyQualifiedName~EmbeddingEndpointTests|FullyQualifiedName~EmbeddingHostingTests' --logger 'trx;LogFileName=embedding-dispatcher-focused.trx' --results-directory InferenceWeb.Tests/TestResults",
+    "dotnet build TensorSharp.Server.Host/TensorSharp.Server.Host.csproj -c Release --no-restore -p:TensorSharpSkipGgmlNative=true -p:TensorSharpSkipMlxNative=true -clp:ErrorsOnly"
+  ],
+  "semantics": {
+    "first_request_delay": false,
+    "coalesce_already_waiting_only": true,
+    "maximum_combined_sequences": 64,
+    "maximum_combined_tokens": 4096,
+    "oversized_request_runs_alone": true,
+    "model_disposal_owned_by_dispatcher": false,
+    "isolated_caller_token_preserved": true,
+    "merged_physical_canceled_when_all_callers_cancel": true
+  },
+  "host_binaries": {
+    "TensorSharp.Server.dll": {
+      "sha256": "2122c904a9dc4b38163e081d9d354222ff9487c49dfb4a26edfb3fb095ac17f4",
+      "bytes": 295936
+    },
+    "TensorSharp.Server.Host.dll": {
+      "sha256": "a09fc7ef573029f9ee9895cc7229316fdfb48f050dd9b2f17e23c3f2f0ab3c28",
+      "bytes": 119296
+    },
+    "TensorSharp.Models.dll": {
+      "sha256": "41bb5e464af4af4459a66316531ba959ed76630d4b46f2b9b82689d20bcf2598",
+      "bytes": 1990656
+    },
+    "libGgmlOps.dylib": {
+      "sha256": "0d2e24bca98997bf76b7046f8ace7da68f51152f29e56e81eb0c8e0c92d66e37",
+      "bytes": 5718144
+    }
+  }
+}

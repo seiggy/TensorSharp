@@ -1,0 +1,433 @@
+{
+  "timestamp": "2026-09-14T19:11:46-0700",
+  "initial_failure": "New cross-backend fixture bound4e-6 failed with5.0365925e-6 maximum native-managed difference; the first assertion stopped earlier at4.1127205e-6 for untouched length3.",
+  "cause": "Existing ggml CPU GGML_GELU_FP16 uses an FP16 input/output lookup table. Managed GELU uses float Tanh. Native attention memory-layout change is bit-identical for all12 fixture vectors.",
+  "source": [
+    "ExternalProjects/ggml/src/ggml-cpu/vec.h:46",
+    "ExternalProjects/ggml/src/ggml-cpu/vec.h:988"
+  ],
+  "old_new_all_vectors_bit_identical": true,
+  "new_test_cross_backend_bound": 6e-06,
+  "unchanged_scalar_bound_each_backend": 2e-06,
+  "existing_quality_gates_changed": false,
+  "native_oracle": "Independent double encoder with only GELU argument/result rounded to Half according to ggml table semantics.",
+  "baseline": {
+    "trx": "InferenceWeb.Tests/TestResults/native-long-fixture-baseline-diagnostic.trx",
+    "counts": {
+      "total": 3,
+      "passed": 2,
+      "failed": 1,
+      "notExecuted": 0
+    },
+    "vectors": [
+      {
+        "pooling": 1,
+        "length": 3,
+        "native_scalar_max_error": 2.4496277241936593e-06,
+        "managed_scalar_max_error": 1.886674645679154e-08,
+        "native_managed_max_error": 2.4586916e-06,
+        "native_single_max_error": 0,
+        "native_reverse_max_error": 0,
+        "native_vector_sha256": "FC91928D8A68B77D054655C1A108AA160BF361D9AE2EBEEEB011A19C35F678C8"
+      },
+      {
+        "pooling": 1,
+        "length": 1008,
+        "native_scalar_max_error": 2.9661883826914703e-07,
+        "managed_scalar_max_error": 2.565229027806648e-07,
+        "native_managed_max_error": 3.5762787e-07,
+        "native_single_max_error": 0,
+        "native_reverse_max_error": 0,
+        "native_vector_sha256": "E583DDD5827BF7E66ACA1C9E760262662EDDBFE97EC4BED9B94DB855BFADDD66"
+      },
+      {
+        "pooling": 1,
+        "length": 1024,
+        "native_scalar_max_error": 2.6643272263426887e-07,
+        "managed_scalar_max_error": 1.3467063117444944e-07,
+        "native_managed_max_error": 2.0861626e-07,
+        "native_single_max_error": 0,
+        "native_reverse_max_error": 0,
+        "native_vector_sha256": "B09E22AF9246FA9E0B73D70B0D2D347291E1642BEBD01A125661A53EB0942C61"
+      },
+      {
+        "pooling": 1,
+        "length": 1031,
+        "native_scalar_max_error": 3.068786956494929e-07,
+        "managed_scalar_max_error": 3.5362187292276026e-07,
+        "native_managed_max_error": 2.682209e-07,
+        "native_single_max_error": 0,
+        "native_reverse_max_error": 0,
+        "native_vector_sha256": "A1530D12A7E296434C4B869A25764AA4B6D4A4A101FCA64CD52F1D3699EAC3F9"
+      },
+      {
+        "pooling": 2,
+        "length": 3,
+        "native_scalar_max_error": 2.9776720916196986e-06,
+        "managed_scalar_max_error": 3.532824666141465e-08,
+        "native_managed_max_error": 2.965331e-06,
+        "native_single_max_error": 0,
+        "native_reverse_max_error": 0,
+        "native_vector_sha256": "AC2E8F8A55268C83E0FAB63B72907A4396946BE62A636690E747802B79897BAA"
+      },
+      {
+        "pooling": 2,
+        "length": 1008,
+        "native_scalar_max_error": 2.557341384212819e-06,
+        "managed_scalar_max_error": 2.9126389300415667e-08,
+        "native_managed_max_error": 2.5629997e-06,
+        "native_single_max_error": 0,
+        "native_reverse_max_error": 0,
+        "native_vector_sha256": "71CBA988A8D571230E4F544CC68B6A14250501BF327EC29A5725BD511059A09D"
+      },
+      {
+        "pooling": 2,
+        "length": 1024,
+        "native_scalar_max_error": 3.1240226074924493e-06,
+        "managed_scalar_max_error": 3.5023565603253815e-08,
+        "native_managed_max_error": 3.1590462e-06,
+        "native_single_max_error": 0,
+        "native_reverse_max_error": 0,
+        "native_vector_sha256": "1D57E82E3B8D97CA1BD457CEA951C8AD3B94CAAF3229A6433E3AD73694746D21"
+      },
+      {
+        "pooling": 2,
+        "length": 1031,
+        "native_scalar_max_error": 2.974014665979574e-06,
+        "managed_scalar_max_error": 2.5148045396106156e-08,
+        "native_managed_max_error": 2.9802322e-06,
+        "native_single_max_error": 0,
+        "native_reverse_max_error": 0,
+        "native_vector_sha256": "FD545CC3B082C6192C10053F59FE7BD7C07029F4F089A22DAD9F8817551D0F2E"
+      },
+      {
+        "pooling": 3,
+        "length": 3,
+        "native_scalar_max_error": 4.110368593240876e-06,
+        "managed_scalar_max_error": 4.199488465306267e-08,
+        "native_managed_max_error": 4.1127205e-06,
+        "native_single_max_error": 0,
+        "native_reverse_max_error": 0,
+        "native_vector_sha256": "69C94940C4DDA366A7D938FCD95F155C24112DA97EF24E4A7CCE0C10BAC3B603"
+      },
+      {
+        "pooling": 3,
+        "length": 1008,
+        "native_scalar_max_error": 3.5156973849370665e-06,
+        "managed_scalar_max_error": 1.7807722296758755e-08,
+        "native_managed_max_error": 3.5315752e-06,
+        "native_single_max_error": 0,
+        "native_reverse_max_error": 0,
+        "native_vector_sha256": "8EBBF477EBD457313AC3B86025B1487B8AF3A600955C52271513BEC03FACA870"
+      },
+      {
+        "pooling": 3,
+        "length": 1024,
+        "native_scalar_max_error": 5.048862556811251e-06,
+        "managed_scalar_max_error": 2.441966295840814e-08,
+        "native_managed_max_error": 5.0365925e-06,
+        "native_single_max_error": 0,
+        "native_reverse_max_error": 0,
+        "native_vector_sha256": "DA0CFC277E19507136F3FFA9F7F47580F6587F6ED77AFEF575A3FBC782F90DB9"
+      },
+      {
+        "pooling": 3,
+        "length": 1031,
+        "native_scalar_max_error": 2.87830990702842e-06,
+        "managed_scalar_max_error": 2.842469870589781e-08,
+        "native_managed_max_error": 2.861023e-06,
+        "native_single_max_error": 0,
+        "native_reverse_max_error": 0,
+        "native_vector_sha256": "CD5C0C483459FFA9B7A1E69DFA3E91BD5A23C87969B94D17691D3F8F5A68FEE1"
+      }
+    ]
+  },
+  "candidate_initial": {
+    "trx": "InferenceWeb.Tests/TestResults/native-long-fixture-candidate-diagnostic.trx",
+    "counts": {
+      "total": 3,
+      "passed": 2,
+      "failed": 1,
+      "notExecuted": 0
+    },
+    "vectors": [
+      {
+        "pooling": 1,
+        "length": 3,
+        "native_scalar_max_error": 2.4496277241936593e-06,
+        "managed_scalar_max_error": 1.886674645679154e-08,
+        "native_managed_max_error": 2.4586916e-06,
+        "native_single_max_error": 0,
+        "native_reverse_max_error": 0,
+        "native_vector_sha256": "FC91928D8A68B77D054655C1A108AA160BF361D9AE2EBEEEB011A19C35F678C8"
+      },
+      {
+        "pooling": 1,
+        "length": 1008,
+        "native_scalar_max_error": 2.9661883826914703e-07,
+        "managed_scalar_max_error": 2.565229027806648e-07,
+        "native_managed_max_error": 3.5762787e-07,
+        "native_single_max_error": 0,
+        "native_reverse_max_error": 0,
+        "native_vector_sha256": "E583DDD5827BF7E66ACA1C9E760262662EDDBFE97EC4BED9B94DB855BFADDD66"
+      },
+      {
+        "pooling": 1,
+        "length": 1024,
+        "native_scalar_max_error": 2.6643272263426887e-07,
+        "managed_scalar_max_error": 1.3467063117444944e-07,
+        "native_managed_max_error": 2.0861626e-07,
+        "native_single_max_error": 0,
+        "native_reverse_max_error": 0,
+        "native_vector_sha256": "B09E22AF9246FA9E0B73D70B0D2D347291E1642BEBD01A125661A53EB0942C61"
+      },
+      {
+        "pooling": 1,
+        "length": 1031,
+        "native_scalar_max_error": 3.068786956494929e-07,
+        "managed_scalar_max_error": 3.5362187292276026e-07,
+        "native_managed_max_error": 2.682209e-07,
+        "native_single_max_error": 0,
+        "native_reverse_max_error": 0,
+        "native_vector_sha256": "A1530D12A7E296434C4B869A25764AA4B6D4A4A101FCA64CD52F1D3699EAC3F9"
+      },
+      {
+        "pooling": 2,
+        "length": 3,
+        "native_scalar_max_error": 2.9776720916196986e-06,
+        "managed_scalar_max_error": 3.532824666141465e-08,
+        "native_managed_max_error": 2.965331e-06,
+        "native_single_max_error": 0,
+        "native_reverse_max_error": 0,
+        "native_vector_sha256": "AC2E8F8A55268C83E0FAB63B72907A4396946BE62A636690E747802B79897BAA"
+      },
+      {
+        "pooling": 2,
+        "length": 1008,
+        "native_scalar_max_error": 2.557341384212819e-06,
+        "managed_scalar_max_error": 2.9126389300415667e-08,
+        "native_managed_max_error": 2.5629997e-06,
+        "native_single_max_error": 0,
+        "native_reverse_max_error": 0,
+        "native_vector_sha256": "71CBA988A8D571230E4F544CC68B6A14250501BF327EC29A5725BD511059A09D"
+      },
+      {
+        "pooling": 2,
+        "length": 1024,
+        "native_scalar_max_error": 3.1240226074924493e-06,
+        "managed_scalar_max_error": 3.5023565603253815e-08,
+        "native_managed_max_error": 3.1590462e-06,
+        "native_single_max_error": 0,
+        "native_reverse_max_error": 0,
+        "native_vector_sha256": "1D57E82E3B8D97CA1BD457CEA951C8AD3B94CAAF3229A6433E3AD73694746D21"
+      },
+      {
+        "pooling": 2,
+        "length": 1031,
+        "native_scalar_max_error": 2.974014665979574e-06,
+        "managed_scalar_max_error": 2.5148045396106156e-08,
+        "native_managed_max_error": 2.9802322e-06,
+        "native_single_max_error": 0,
+        "native_reverse_max_error": 0,
+        "native_vector_sha256": "FD545CC3B082C6192C10053F59FE7BD7C07029F4F089A22DAD9F8817551D0F2E"
+      },
+      {
+        "pooling": 3,
+        "length": 3,
+        "native_scalar_max_error": 4.110368593240876e-06,
+        "managed_scalar_max_error": 4.199488465306267e-08,
+        "native_managed_max_error": 4.1127205e-06,
+        "native_single_max_error": 0,
+        "native_reverse_max_error": 0,
+        "native_vector_sha256": "69C94940C4DDA366A7D938FCD95F155C24112DA97EF24E4A7CCE0C10BAC3B603"
+      },
+      {
+        "pooling": 3,
+        "length": 1008,
+        "native_scalar_max_error": 3.5156973849370665e-06,
+        "managed_scalar_max_error": 1.7807722296758755e-08,
+        "native_managed_max_error": 3.5315752e-06,
+        "native_single_max_error": 0,
+        "native_reverse_max_error": 0,
+        "native_vector_sha256": "8EBBF477EBD457313AC3B86025B1487B8AF3A600955C52271513BEC03FACA870"
+      },
+      {
+        "pooling": 3,
+        "length": 1024,
+        "native_scalar_max_error": 5.048862556811251e-06,
+        "managed_scalar_max_error": 2.441966295840814e-08,
+        "native_managed_max_error": 5.0365925e-06,
+        "native_single_max_error": 0,
+        "native_reverse_max_error": 0,
+        "native_vector_sha256": "DA0CFC277E19507136F3FFA9F7F47580F6587F6ED77AFEF575A3FBC782F90DB9"
+      },
+      {
+        "pooling": 3,
+        "length": 1031,
+        "native_scalar_max_error": 2.87830990702842e-06,
+        "managed_scalar_max_error": 2.842469870589781e-08,
+        "native_managed_max_error": 2.861023e-06,
+        "native_single_max_error": 0,
+        "native_reverse_max_error": 0,
+        "native_vector_sha256": "CD5C0C483459FFA9B7A1E69DFA3E91BD5A23C87969B94D17691D3F8F5A68FEE1"
+      }
+    ]
+  },
+  "final": {
+    "trx": "InferenceWeb.Tests/TestResults/native-long-fixture-final.trx",
+    "counts": {
+      "total": 6,
+      "passed": 6,
+      "failed": 0,
+      "notExecuted": 0
+    },
+    "vectors": [
+      {
+        "pooling": 1,
+        "length": 3,
+        "native_scalar_max_error": 2.4496277241936593e-06,
+        "native_half_gelu_scalar_max_error": 2.3669295384776134e-08,
+        "managed_scalar_max_error": 1.886674645679154e-08,
+        "native_managed_max_error": 2.4586916e-06,
+        "native_single_max_error": 0,
+        "native_reverse_max_error": 0,
+        "native_vector_sha256": "FC91928D8A68B77D054655C1A108AA160BF361D9AE2EBEEEB011A19C35F678C8"
+      },
+      {
+        "pooling": 1,
+        "length": 1008,
+        "native_scalar_max_error": 2.9661883826914703e-07,
+        "native_half_gelu_scalar_max_error": 4.051886215439282e-08,
+        "managed_scalar_max_error": 2.565229027806648e-07,
+        "native_managed_max_error": 3.5762787e-07,
+        "native_single_max_error": 0,
+        "native_reverse_max_error": 0,
+        "native_vector_sha256": "E583DDD5827BF7E66ACA1C9E760262662EDDBFE97EC4BED9B94DB855BFADDD66"
+      },
+      {
+        "pooling": 1,
+        "length": 1024,
+        "native_scalar_max_error": 2.6643272263426887e-07,
+        "native_half_gelu_scalar_max_error": 2.315212879744344e-08,
+        "managed_scalar_max_error": 1.3467063117444944e-07,
+        "native_managed_max_error": 2.0861626e-07,
+        "native_single_max_error": 0,
+        "native_reverse_max_error": 0,
+        "native_vector_sha256": "B09E22AF9246FA9E0B73D70B0D2D347291E1642BEBD01A125661A53EB0942C61"
+      },
+      {
+        "pooling": 1,
+        "length": 1031,
+        "native_scalar_max_error": 3.068786956494929e-07,
+        "native_half_gelu_scalar_max_error": 6.3491901985957e-08,
+        "managed_scalar_max_error": 3.5362187292276026e-07,
+        "native_managed_max_error": 2.682209e-07,
+        "native_single_max_error": 0,
+        "native_reverse_max_error": 0,
+        "native_vector_sha256": "A1530D12A7E296434C4B869A25764AA4B6D4A4A101FCA64CD52F1D3699EAC3F9"
+      },
+      {
+        "pooling": 2,
+        "length": 3,
+        "native_scalar_max_error": 2.9776720916196986e-06,
+        "native_half_gelu_scalar_max_error": 2.3873521132200537e-08,
+        "managed_scalar_max_error": 3.532824666141465e-08,
+        "native_managed_max_error": 2.965331e-06,
+        "native_single_max_error": 0,
+        "native_reverse_max_error": 0,
+        "native_vector_sha256": "AC2E8F8A55268C83E0FAB63B72907A4396946BE62A636690E747802B79897BAA"
+      },
+      {
+        "pooling": 2,
+        "length": 1008,
+        "native_scalar_max_error": 2.557341384212819e-06,
+        "native_half_gelu_scalar_max_error": 3.1975496805891623e-08,
+        "managed_scalar_max_error": 2.9126389300415667e-08,
+        "native_managed_max_error": 2.5629997e-06,
+        "native_single_max_error": 0,
+        "native_reverse_max_error": 0,
+        "native_vector_sha256": "71CBA988A8D571230E4F544CC68B6A14250501BF327EC29A5725BD511059A09D"
+      },
+      {
+        "pooling": 2,
+        "length": 1024,
+        "native_scalar_max_error": 3.1240226074924493e-06,
+        "native_half_gelu_scalar_max_error": 3.792305383609751e-08,
+        "managed_scalar_max_error": 3.5023565603253815e-08,
+        "native_managed_max_error": 3.1590462e-06,
+        "native_single_max_error": 0,
+        "native_reverse_max_error": 0,
+        "native_vector_sha256": "1D57E82E3B8D97CA1BD457CEA951C8AD3B94CAAF3229A6433E3AD73694746D21"
+      },
+      {
+        "pooling": 2,
+        "length": 1031,
+        "native_scalar_max_error": 2.974014665979574e-06,
+        "native_half_gelu_scalar_max_error": 3.699007589119674e-08,
+        "managed_scalar_max_error": 2.5148045396106156e-08,
+        "native_managed_max_error": 2.9802322e-06,
+        "native_single_max_error": 0,
+        "native_reverse_max_error": 0,
+        "native_vector_sha256": "FD545CC3B082C6192C10053F59FE7BD7C07029F4F089A22DAD9F8817551D0F2E"
+      },
+      {
+        "pooling": 3,
+        "length": 3,
+        "native_scalar_max_error": 4.110368593240876e-06,
+        "native_half_gelu_scalar_max_error": 4.543655585109718e-08,
+        "managed_scalar_max_error": 4.199488465306267e-08,
+        "native_managed_max_error": 4.1127205e-06,
+        "native_single_max_error": 0,
+        "native_reverse_max_error": 0,
+        "native_vector_sha256": "69C94940C4DDA366A7D938FCD95F155C24112DA97EF24E4A7CCE0C10BAC3B603"
+      },
+      {
+        "pooling": 3,
+        "length": 1008,
+        "native_scalar_max_error": 3.5156973849370665e-06,
+        "native_half_gelu_scalar_max_error": 3.813950594233617e-08,
+        "managed_scalar_max_error": 1.7807722296758755e-08,
+        "native_managed_max_error": 3.5315752e-06,
+        "native_single_max_error": 0,
+        "native_reverse_max_error": 0,
+        "native_vector_sha256": "8EBBF477EBD457313AC3B86025B1487B8AF3A600955C52271513BEC03FACA870"
+      },
+      {
+        "pooling": 3,
+        "length": 1024,
+        "native_scalar_max_error": 5.048862556811251e-06,
+        "native_half_gelu_scalar_max_error": 3.3158904622077046e-08,
+        "managed_scalar_max_error": 2.441966295840814e-08,
+        "native_managed_max_error": 5.0365925e-06,
+        "native_single_max_error": 0,
+        "native_reverse_max_error": 0,
+        "native_vector_sha256": "DA0CFC277E19507136F3FFA9F7F47580F6587F6ED77AFEF575A3FBC782F90DB9"
+      },
+      {
+        "pooling": 3,
+        "length": 1031,
+        "native_scalar_max_error": 2.87830990702842e-06,
+        "native_half_gelu_scalar_max_error": 3.9390901485081287e-08,
+        "managed_scalar_max_error": 2.842469870589781e-08,
+        "native_managed_max_error": 2.861023e-06,
+        "native_single_max_error": 0,
+        "native_reverse_max_error": 0,
+        "native_vector_sha256": "CD5C0C483459FFA9B7A1E69DFA3E91BD5A23C87969B94D17691D3F8F5A68FEE1"
+      }
+    ]
+  },
+  "commands": [
+    "dotnet build InferenceWeb.Tests/InferenceWeb.Tests.csproj -c Release --no-restore -p:TensorSharpSkipGgmlNative=true -p:TensorSharpSkipMlxNative=true -clp:ErrorsOnly",
+    "dotnet test InferenceWeb.Tests/InferenceWeb.Tests.csproj -c Release --no-build --no-restore --filter 'FullyQualifiedName~NativeLongEmbeddingTests|FullyQualifiedName~EmbeddingModelTests.ManagedLongAttentionSchedulingPreservesScalarResultsAndMixedBatchIsolation' --logger 'trx;LogFileName=native-long-fixture-final.trx' --results-directory InferenceWeb.Tests/TestResults"
+  ],
+  "native_binaries": {
+    "previous": {
+      "path": "/tmp/libGgmlOps-embedding-before-long-contiguous.dylib",
+      "sha256": "e2c213cc695acd3742ce2bc633317640505b76e9ffce0e57157ed29a5bdde70d"
+    },
+    "candidate": {
+      "path": "InferenceWeb.Tests/bin/Release/net10.0/libGgmlOps.dylib",
+      "sha256": "0d2e24bca98997bf76b7046f8ace7da68f51152f29e56e81eb0c8e0c92d66e37"
+    }
+  }
+}

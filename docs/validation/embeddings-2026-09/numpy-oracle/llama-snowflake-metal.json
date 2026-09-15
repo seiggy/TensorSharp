@@ -1,0 +1,181 @@
+{
+  "purpose": "Independent mathematical BERT/XLM-R check on quantized GGUF weights; not MTEB or a speed benchmark.",
+  "implementation": "NumPy FP32 matmul, per-sequence bidirectional attention, layernorm, GELU, full final layer, metadata pooling and L2; gguf-py used only for format/dequantization.",
+  "model_file": "/Users/zhongkaifu/work/models/embeddings/snowflake-arctic-embed-l-v2.0-q8_0.gguf",
+  "model_sha256": "30b0d43dd5825809d2999fa2f4013a1d788c1539ad9ec163d1d305fa3b586ed8",
+  "oracle_script_sha256": "2299942862a1db434249b77419bd0f8cf7abff868cf918eb5fe27ed5d197ea27",
+  "reference_creation_script_sha256": "2299942862a1db434249b77419bd0f8cf7abff868cf918eb5fe27ed5d197ea27",
+  "gguf_py": "/Users/zhongkaifu/work/llama.cpp/gguf-py",
+  "token_fixture": "docs/validation/embeddings-2026-09/snowflake-tokenization.json",
+  "token_fixture_sha256": "d3a3349061c9a810134d6931d6a798ceeab057e779b0aaac08b966fd365b52a8",
+  "selected_tokens_sha256": "0b26e9cf955f01e96f1e639050f846acf6d6431a79c6780eb5b32486446c7773",
+  "http_engine": "llama",
+  "http_results": "docs/validation/embeddings-2026-09/snowflake-metal/results.json",
+  "http_results_sha256": "20fb3a3e476edc6b26b62cbc0ad6ce5aa915d98ef2329b472b3c611cd1ac8c2c",
+  "reference_vectors": "docs/validation/embeddings-2026-09/numpy-oracle/snowflake-metal.vectors.npz",
+  "reference_vectors_sha256": "979a56bd11052bcd7b59242d41a6f7561840eaf56df4db46a79bb58204868664",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "python": "3.13.15",
+  "numpy": "2.5.3",
+  "numpy_error_policy": {
+    "divide": "raise",
+    "over": "raise",
+    "under": "ignore",
+    "invalid": "raise"
+  },
+  "thread_environment": {
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  },
+  "gelu": "exact",
+  "thresholds": {
+    "min_cosine": 0.999,
+    "max_absolute_error": 0.005
+  },
+  "metadata": {
+    "dimensions": 1024,
+    "heads": 16,
+    "layers": 24,
+    "layer_norm_epsilon": 9.999999747378752e-06,
+    "pooling": "CLS",
+    "token_counts": [
+      13,
+      14,
+      24,
+      11,
+      15,
+      15
+    ],
+    "layer_seconds": [
+      0.0360858750063926,
+      0.030631166882812977,
+      0.0312844580039382,
+      0.03058587503619492,
+      0.030704458011314273,
+      0.030557041987776756,
+      0.03039095806889236,
+      0.030927749816328287,
+      0.030696916161105037,
+      0.030504667200148106,
+      0.030486792093142867,
+      0.03063133405521512,
+      0.03110208292491734,
+      0.03271083394065499,
+      0.031072083860635757,
+      0.030873582931235433,
+      0.03213508287444711,
+      0.030631165951490402,
+      0.03056983300484717,
+      0.03088537510484457,
+      0.030611125053837895,
+      0.030279916943982244,
+      0.03172183386050165,
+      0.03102716594003141
+    ]
+  },
+  "comparisons": [
+    {
+      "text": "query: find the function that adds two numbers",
+      "tokens": 13,
+      "cosine": 0.9999937872900825,
+      "max_absolute_error": 0.0003923792392015457,
+      "rmse": 0.00011015533959930028,
+      "passed": true
+    },
+    {
+      "text": "def add(a, b):\n    return a + b",
+      "tokens": 14,
+      "cosine": 0.9999925901961837,
+      "max_absolute_error": 0.00039577390998601913,
+      "rmse": 0.00012030075904755994,
+      "passed": true
+    },
+    {
+      "text": "def read_file(path):\n    with open(path) as f:\n        return f.read()",
+      "tokens": 24,
+      "cosine": 0.9999914978292104,
+      "max_absolute_error": 0.0004522849339991808,
+      "rmse": 0.00012886350357494593,
+      "passed": true
+    },
+    {
+      "text": "query: read a text file from disk",
+      "tokens": 11,
+      "cosine": 0.9999943099014321,
+      "max_absolute_error": 0.0003758424427360296,
+      "rmse": 0.00010542046113225408,
+      "passed": true
+    },
+    {
+      "text": "你好，世界！查找读取文件的函数。",
+      "tokens": 15,
+      "cosine": 0.9999869960175377,
+      "max_absolute_error": 0.000578269362449646,
+      "rmse": 0.00015936876821256464,
+      "passed": true
+    },
+    {
+      "text": "Café naïve résumé — Straße ﬁ ﬃ ＡＢＣ é 😀",
+      "tokens": 15,
+      "cosine": 0.9999885279764887,
+      "max_absolute_error": 0.0005022697150707245,
+      "rmse": 0.0001496873264746999,
+      "passed": true
+    }
+  ],
+  "retrieval": [
+    {
+      "query": "query: find the function that adds two numbers",
+      "document_indices": [
+        1,
+        2
+      ],
+      "numpy_scores": {
+        "1": 0.5336104763589433,
+        "2": 0.12180666210302102
+      },
+      "http_scores": {
+        "1": 0.5335260492564199,
+        "2": 0.12169266141334374
+      },
+      "numpy_order": [
+        1,
+        2
+      ],
+      "http_order": [
+        1,
+        2
+      ],
+      "same_order": true
+    },
+    {
+      "query": "query: read a text file from disk",
+      "document_indices": [
+        1,
+        2
+      ],
+      "numpy_scores": {
+        "1": 0.0712413364880386,
+        "2": 0.365053575465326
+      },
+      "http_scores": {
+        "1": 0.07113071652999149,
+        "2": 0.36502105636627025
+      },
+      "numpy_order": [
+        2,
+        1
+      ],
+      "http_order": [
+        2,
+        1
+      ],
+      "same_order": true
+    }
+  ],
+  "minimum_cosine": 0.9999869960175377,
+  "maximum_absolute_error": 0.000578269362449646,
+  "passed": true,
+  "elapsed_seconds": 0.24636687501333654
+}

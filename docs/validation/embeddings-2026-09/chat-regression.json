@@ -1,0 +1,120 @@
+{
+  "model_file": "/Users/zhongkaifu/work/models/Qwen/Qwen3.5-9B-Q8_0.gguf",
+  "backend": "ggml_metal",
+  "context_limit": 2048,
+  "cases": [
+    {
+      "path": "/v1/chat/completions",
+      "request": {
+        "model": "Qwen3.5-9B-Q8_0",
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 6 multiplied by 7? Reply with only the number."
+          }
+        ],
+        "temperature": 0,
+        "max_tokens": 32,
+        "think": false,
+        "stream": false
+      },
+      "response": {
+        "id": "chatcmpl-a000806ef73f45cb824bb",
+        "object": "chat.completion",
+        "created": 1789430450,
+        "model": "Qwen3.5-9B-Q8_0.gguf",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "42"
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 27,
+          "completion_tokens": 2,
+          "total_tokens": 29,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      "elapsed_ms": 291.288375
+    },
+    {
+      "path": "/v1/chat/completions",
+      "request": {
+        "model": "Qwen3.5-9B-Q8_0",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return a JSON object with one key answer and integer value 42."
+          }
+        ],
+        "temperature": 0,
+        "max_tokens": 32,
+        "think": false,
+        "stream": false,
+        "response_format": {
+          "type": "json_object"
+        }
+      },
+      "response": {
+        "id": "chatcmpl-83a6a75995e04a6587962",
+        "object": "chat.completion",
+        "created": 1789430451,
+        "model": "Qwen3.5-9B-Q8_0.gguf",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "{\"answer\":42}"
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 66,
+          "completion_tokens": 11,
+          "total_tokens": 77,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      "elapsed_ms": 788.71525
+    },
+    {
+      "path": "/api/generate",
+      "request": {
+        "model": "Qwen3.5-9B-Q8_0",
+        "prompt": "What is the capital of France? Reply with only the city name.",
+        "stream": false,
+        "think": false,
+        "options": {
+          "temperature": 0,
+          "num_predict": 32
+        }
+      },
+      "response": {
+        "model": "Qwen3.5-9B-Q8_0.gguf",
+        "created_at": "2026-09-15T00:00:51.2405140Z",
+        "response": "Paris",
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 187534125,
+        "prompt_eval_count": 26,
+        "prompt_eval_duration": 344250,
+        "eval_count": 1,
+        "eval_duration": 187543166,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_hit_ratio": 0
+      },
+      "elapsed_ms": 192.70641600000005
+    }
+  ]
+}

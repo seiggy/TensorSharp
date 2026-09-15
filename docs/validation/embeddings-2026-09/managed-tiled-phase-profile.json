@@ -1,0 +1,81 @@
+{
+  "purpose": "Temporary diagnostic instrumentation, not performance gate. Per-phase attention_work_ms sums concurrent worker times. Production instrumentation removed afterward.",
+  "command": [
+    "dotnet",
+    "/Users/zhongkaifu/work/TensorSharp/TensorSharp.Server.Host/bin/TensorSharp.Server.Host.dll",
+    "--model",
+    "/Users/zhongkaifu/work/models/embeddings/snowflake-arctic-embed-l-v2.0-q8_0.gguf",
+    "--embeddings",
+    "--backend",
+    "cpu",
+    "--embedding-threads",
+    "8",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "18384",
+    "--no-webui",
+    "--no-skills"
+  ],
+  "prewarm_seconds": 10,
+  "samples": [
+    {
+      "iteration": 0,
+      "warmup": true,
+      "wall_ms": 19249.195874999998,
+      "max_abs_difference_from_uninstrumented_headmajor": 0.0
+    },
+    {
+      "iteration": 1,
+      "warmup": false,
+      "wall_ms": 19238.931792,
+      "max_abs_difference_from_uninstrumented_headmajor": 0.0
+    }
+  ],
+  "traces": [
+    {
+      "tokens": 8192,
+      "phases": {
+        "embedding": 3.100375,
+        "norm": 78.85512700000004,
+        "qkv": 706.9379599999999,
+        "attention": 16322.784416,
+        "attention_output": 214.38808299999994,
+        "ffn_up": 919.5293720000001,
+        "gelu": 152.74541800000003,
+        "ffn_down": 845.323874,
+        "pooling": 0.002333
+      },
+      "sampled_tile_work": {
+        "jobs": 47104,
+        "sampled_jobs": 368,
+        "packing_ms": 69.747822,
+        "scores_ms": 366.145866,
+        "softmax_ms": 199.73359,
+        "values_ms": 373.483925
+      }
+    },
+    {
+      "tokens": 8192,
+      "phases": {
+        "embedding": 0.883833,
+        "norm": 80.72750199999999,
+        "qkv": 681.465959,
+        "attention": 16395.828913999998,
+        "attention_output": 216.26666699999996,
+        "ffn_up": 870.1814160000001,
+        "gelu": 148.53595699999997,
+        "ffn_down": 843.4785019999998,
+        "pooling": 0.00175
+      },
+      "sampled_tile_work": {
+        "jobs": 47104,
+        "sampled_jobs": 368,
+        "packing_ms": 70.186269,
+        "scores_ms": 369.652413,
+        "softmax_ms": 201.254543,
+        "values_ms": 373.36756
+      }
+    }
+  ]
+}

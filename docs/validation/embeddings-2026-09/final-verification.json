@@ -1,0 +1,303 @@
+{
+  "started": "2026-09-15T02:45:59Z",
+  "command": [
+    "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+    "benchmarks/EmbeddingBench/final_verify.py",
+    "--minilm-model",
+    "/Users/zhongkaifu/work/models/embeddings/all-MiniLM-L6-v2-Q8_0.gguf",
+    "--snowflake-model",
+    "/Users/zhongkaifu/work/models/embeddings/snowflake-arctic-embed-l-v2.0-q8_0.gguf"
+  ],
+  "preserved_evidence": [
+    "docs/validation/embeddings-2026-09/unit-tests-before-final-verification.json",
+    "docs/validation/embeddings-2026-09/managed-focused-tests-before-final-verification.json",
+    "docs/validation/embeddings-2026-09/managed-native-free-before-final-verification.json",
+    "docs/validation/embeddings-2026-09/managed-context-boundaries-before-final-verification.json",
+    "InferenceWeb.Tests/TestResults/embedding-final-before-final-verification.trx",
+    "InferenceWeb.Tests/TestResults/embedding-managed-focused-before-final-verification.trx"
+  ],
+  "status": "passed",
+  "stages": [
+    {
+      "name": "build",
+      "command": [
+        "dotnet",
+        "build",
+        "InferenceWeb.Tests/InferenceWeb.Tests.csproj",
+        "-c",
+        "Release",
+        "--no-restore",
+        "-p:TensorSharpSkipGgmlNative=true",
+        "-p:TensorSharpSkipMlxNative=true",
+        "-clp:ErrorsOnly"
+      ],
+      "environment_overrides": {},
+      "started": "2026-09-15T02:45:59Z",
+      "log": "InferenceWeb.Tests/TestResults/final-verification-build.log",
+      "finished": "2026-09-15T02:46:00Z",
+      "exit_code": 0
+    },
+    {
+      "name": "unit",
+      "command": [
+        "dotnet",
+        "test",
+        "InferenceWeb.Tests/InferenceWeb.Tests.csproj",
+        "-c",
+        "Release",
+        "--no-build",
+        "--no-restore",
+        "--filter",
+        "Category!=Bench&Requires!=Models&Requires!=Cuda&Requires!=Mlx",
+        "--logger",
+        "trx;LogFileName=embedding-final.trx",
+        "--results-directory",
+        "InferenceWeb.Tests/TestResults"
+      ],
+      "environment_overrides": {},
+      "started": "2026-09-15T02:46:00Z",
+      "log": "InferenceWeb.Tests/TestResults/final-verification-unit.log",
+      "finished": "2026-09-15T02:46:37Z",
+      "exit_code": 0,
+      "summary": "docs/validation/embeddings-2026-09/unit-tests.json"
+    },
+    {
+      "name": "focused",
+      "command": [
+        "dotnet",
+        "test",
+        "InferenceWeb.Tests/InferenceWeb.Tests.csproj",
+        "-c",
+        "Release",
+        "--no-build",
+        "--no-restore",
+        "--filter",
+        "FullyQualifiedName~EmbeddingModelTests|FullyQualifiedName~EmbeddingHostingTests|FullyQualifiedName~EmbeddingEndpointTests|FullyQualifiedName~EmbeddingTokenizerTests|FullyQualifiedName~ManagedQuantizedOpsTests|FullyQualifiedName~ManagedEmbeddingQ8MatrixTests|FullyQualifiedName~CpuWorkerPoolTests|FullyQualifiedName~ManagedEmbeddingMathTests|FullyQualifiedName~NativeLongEmbeddingTests|FullyQualifiedName~EmbeddingRequestDispatcherTests",
+        "--logger",
+        "trx;LogFileName=embedding-managed-focused.trx",
+        "--results-directory",
+        "InferenceWeb.Tests/TestResults"
+      ],
+      "environment_overrides": {
+        "TS_TEST_EMBEDDING_BACKEND": "GGML_CPU",
+        "TENSORSHARP_MINILM_EMBED_MODEL": "/Users/zhongkaifu/work/models/embeddings/all-MiniLM-L6-v2-Q8_0.gguf",
+        "TENSORSHARP_SNOWFLAKE_EMBED_MODEL": "/Users/zhongkaifu/work/models/embeddings/snowflake-arctic-embed-l-v2.0-q8_0.gguf"
+      },
+      "started": "2026-09-15T02:46:37Z",
+      "log": "InferenceWeb.Tests/TestResults/final-verification-focused.log",
+      "finished": "2026-09-15T02:46:43Z",
+      "exit_code": 0,
+      "summary": "docs/validation/embeddings-2026-09/managed-focused-tests.json"
+    },
+    {
+      "name": "native-free-and-contexts",
+      "command": [
+        "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+        "benchmarks/EmbeddingBench/native_free_smoke.py",
+        "--source",
+        "TensorSharp.Server.Host/bin",
+        "--copy",
+        "/tmp/tensorsharp-embedding-managed-host",
+        "--model",
+        "/Users/zhongkaifu/work/models/embeddings/all-MiniLM-L6-v2-Q8_0.gguf",
+        "--model",
+        "/Users/zhongkaifu/work/models/embeddings/snowflake-arctic-embed-l-v2.0-q8_0.gguf",
+        "--port",
+        "18383",
+        "--threads",
+        "8",
+        "--output",
+        "docs/validation/embeddings-2026-09/managed-native-free.json",
+        "--context-output",
+        "docs/validation/embeddings-2026-09/managed-context-boundaries.json"
+      ],
+      "environment_overrides": {},
+      "started": "2026-09-15T02:46:43Z",
+      "log": "InferenceWeb.Tests/TestResults/final-verification-native-free-and-contexts.log",
+      "finished": "2026-09-15T02:47:18Z",
+      "exit_code": 0
+    }
+  ],
+  "production_binaries_before": {
+    "TensorSharp.AgentHost.dll": {
+      "path": "TensorSharp.Server.Host/bin/TensorSharp.AgentHost.dll",
+      "bytes": 621056,
+      "sha256": "0e74528b890f6427e9da4e7de5e8601a7f4e3b01fa743b0edb240c45a28d9000"
+    },
+    "TensorSharp.Backends.Cuda.dll": {
+      "path": "TensorSharp.Server.Host/bin/TensorSharp.Backends.Cuda.dll",
+      "bytes": 271872,
+      "sha256": "c73f9e7e2491cf9d3a3fe973d1f145eeac8bb141dd397e3aece07c0934254737"
+    },
+    "TensorSharp.Backends.GGML.dll": {
+      "path": "TensorSharp.Server.Host/bin/TensorSharp.Backends.GGML.dll",
+      "bytes": 281600,
+      "sha256": "f2cf743ed810ba9b81a0f7040e3ed128f46e38affbee13d5883be89f499e5b21"
+    },
+    "TensorSharp.Backends.MLX.dll": {
+      "path": "TensorSharp.Server.Host/bin/TensorSharp.Backends.MLX.dll",
+      "bytes": 833536,
+      "sha256": "b41a4f2220faab27c01888b43dba7ba060298314fbfc4f3b5260931b4505394c"
+    },
+    "TensorSharp.Chat.dll": {
+      "path": "TensorSharp.Server.Host/bin/TensorSharp.Chat.dll",
+      "bytes": 435200,
+      "sha256": "91446afe6067f7c058e7064a11cd557c434a141bb0f5cf0973e759f3cccae1e7"
+    },
+    "TensorSharp.Core.dll": {
+      "path": "TensorSharp.Server.Host/bin/TensorSharp.Core.dll",
+      "bytes": 165888,
+      "sha256": "c74f5049eea5e1dfedb4e3f1d00d72ed40b03bde56e9f4db4d64141000da591e"
+    },
+    "TensorSharp.Distributed.dll": {
+      "path": "TensorSharp.Server.Host/bin/TensorSharp.Distributed.dll",
+      "bytes": 18944,
+      "sha256": "8a8833770aca291a12e3ecf0968e6c2e11037090f04fac9d0891fd5485f513c2"
+    },
+    "TensorSharp.Models.dll": {
+      "path": "TensorSharp.Server.Host/bin/TensorSharp.Models.dll",
+      "bytes": 1990656,
+      "sha256": "41bb5e464af4af4459a66316531ba959ed76630d4b46f2b9b82689d20bcf2598"
+    },
+    "TensorSharp.Runtime.Logging.dll": {
+      "path": "TensorSharp.Server.Host/bin/TensorSharp.Runtime.Logging.dll",
+      "bytes": 24576,
+      "sha256": "13744dd6f77db9905165b033a44042ad020bbbf27e0efd1c7e3ccf0f5d8dbff3"
+    },
+    "TensorSharp.Runtime.dll": {
+      "path": "TensorSharp.Server.Host/bin/TensorSharp.Runtime.dll",
+      "bytes": 616448,
+      "sha256": "683f7ba0875adae4763ef19bef062f14b4b1fb9b79850369c167544949fc0e57"
+    },
+    "TensorSharp.Server.Host.dll": {
+      "path": "TensorSharp.Server.Host/bin/TensorSharp.Server.Host.dll",
+      "bytes": 119296,
+      "sha256": "a09fc7ef573029f9ee9895cc7229316fdfb48f050dd9b2f17e23c3f2f0ab3c28"
+    },
+    "TensorSharp.Server.dll": {
+      "path": "TensorSharp.Server.Host/bin/TensorSharp.Server.dll",
+      "bytes": 295936,
+      "sha256": "2122c904a9dc4b38163e081d9d354222ff9487c49dfb4a26edfb3fb095ac17f4"
+    },
+    "libGgmlOps.dylib": {
+      "path": "TensorSharp.Server.Host/bin/libGgmlOps.dylib",
+      "bytes": 5718144,
+      "sha256": "0d2e24bca98997bf76b7046f8ace7da68f51152f29e56e81eb0c8e0c92d66e37"
+    },
+    "libjaccl.dylib": {
+      "path": "TensorSharp.Server.Host/bin/libjaccl.dylib",
+      "bytes": 930000,
+      "sha256": "df3a2d57edc51cedb2681be8a859be686b71c67da89744fa23bc3553c359f438"
+    },
+    "libmlx.dylib": {
+      "path": "TensorSharp.Server.Host/bin/libmlx.dylib",
+      "bytes": 21653808,
+      "sha256": "b2ebe412931b6b9e575495b8fd6329e3d9d1b875bb62bcebd58a609a835b8dad"
+    },
+    "libmlxc.dylib": {
+      "path": "TensorSharp.Server.Host/bin/libmlxc.dylib",
+      "bytes": 837152,
+      "sha256": "15869028d146d41dd96d7fc2782ca60e54488c465ce38a43eb5a87bc1e08b401"
+    }
+  },
+  "models": {
+    "minilm": {
+      "path": "/Users/zhongkaifu/work/models/embeddings/all-MiniLM-L6-v2-Q8_0.gguf",
+      "sha256": "263215c3cadd6e16740741a7624ab4cbb6c8e777688bd5331ecfbf5681c2f8ed"
+    },
+    "snowflake": {
+      "path": "/Users/zhongkaifu/work/models/embeddings/snowflake-arctic-embed-l-v2.0-q8_0.gguf",
+      "sha256": "30b0d43dd5825809d2999fa2f4013a1d788c1539ad9ec163d1d305fa3b586ed8"
+    }
+  },
+  "validated_binary_anchor": {
+    "path": "docs/validation/embeddings-2026-09/dispatcher-focused-tests.json",
+    "sha256": "cee447f04eb974b66ae7b3454476c6ec05d5dd0d2492f12bdf7c513ceb8ee91b",
+    "mismatches": []
+  },
+  "production_binaries_after": {
+    "TensorSharp.AgentHost.dll": {
+      "path": "TensorSharp.Server.Host/bin/TensorSharp.AgentHost.dll",
+      "bytes": 621056,
+      "sha256": "0e74528b890f6427e9da4e7de5e8601a7f4e3b01fa743b0edb240c45a28d9000"
+    },
+    "TensorSharp.Backends.Cuda.dll": {
+      "path": "TensorSharp.Server.Host/bin/TensorSharp.Backends.Cuda.dll",
+      "bytes": 271872,
+      "sha256": "c73f9e7e2491cf9d3a3fe973d1f145eeac8bb141dd397e3aece07c0934254737"
+    },
+    "TensorSharp.Backends.GGML.dll": {
+      "path": "TensorSharp.Server.Host/bin/TensorSharp.Backends.GGML.dll",
+      "bytes": 281600,
+      "sha256": "f2cf743ed810ba9b81a0f7040e3ed128f46e38affbee13d5883be89f499e5b21"
+    },
+    "TensorSharp.Backends.MLX.dll": {
+      "path": "TensorSharp.Server.Host/bin/TensorSharp.Backends.MLX.dll",
+      "bytes": 833536,
+      "sha256": "b41a4f2220faab27c01888b43dba7ba060298314fbfc4f3b5260931b4505394c"
+    },
+    "TensorSharp.Chat.dll": {
+      "path": "TensorSharp.Server.Host/bin/TensorSharp.Chat.dll",
+      "bytes": 435200,
+      "sha256": "91446afe6067f7c058e7064a11cd557c434a141bb0f5cf0973e759f3cccae1e7"
+    },
+    "TensorSharp.Core.dll": {
+      "path": "TensorSharp.Server.Host/bin/TensorSharp.Core.dll",
+      "bytes": 165888,
+      "sha256": "c74f5049eea5e1dfedb4e3f1d00d72ed40b03bde56e9f4db4d64141000da591e"
+    },
+    "TensorSharp.Distributed.dll": {
+      "path": "TensorSharp.Server.Host/bin/TensorSharp.Distributed.dll",
+      "bytes": 18944,
+      "sha256": "8a8833770aca291a12e3ecf0968e6c2e11037090f04fac9d0891fd5485f513c2"
+    },
+    "TensorSharp.Models.dll": {
+      "path": "TensorSharp.Server.Host/bin/TensorSharp.Models.dll",
+      "bytes": 1990656,
+      "sha256": "41bb5e464af4af4459a66316531ba959ed76630d4b46f2b9b82689d20bcf2598"
+    },
+    "TensorSharp.Runtime.Logging.dll": {
+      "path": "TensorSharp.Server.Host/bin/TensorSharp.Runtime.Logging.dll",
+      "bytes": 24576,
+      "sha256": "13744dd6f77db9905165b033a44042ad020bbbf27e0efd1c7e3ccf0f5d8dbff3"
+    },
+    "TensorSharp.Runtime.dll": {
+      "path": "TensorSharp.Server.Host/bin/TensorSharp.Runtime.dll",
+      "bytes": 616448,
+      "sha256": "683f7ba0875adae4763ef19bef062f14b4b1fb9b79850369c167544949fc0e57"
+    },
+    "TensorSharp.Server.Host.dll": {
+      "path": "TensorSharp.Server.Host/bin/TensorSharp.Server.Host.dll",
+      "bytes": 119296,
+      "sha256": "a09fc7ef573029f9ee9895cc7229316fdfb48f050dd9b2f17e23c3f2f0ab3c28"
+    },
+    "TensorSharp.Server.dll": {
+      "path": "TensorSharp.Server.Host/bin/TensorSharp.Server.dll",
+      "bytes": 295936,
+      "sha256": "2122c904a9dc4b38163e081d9d354222ff9487c49dfb4a26edfb3fb095ac17f4"
+    },
+    "libGgmlOps.dylib": {
+      "path": "TensorSharp.Server.Host/bin/libGgmlOps.dylib",
+      "bytes": 5718144,
+      "sha256": "0d2e24bca98997bf76b7046f8ace7da68f51152f29e56e81eb0c8e0c92d66e37"
+    },
+    "libjaccl.dylib": {
+      "path": "TensorSharp.Server.Host/bin/libjaccl.dylib",
+      "bytes": 930000,
+      "sha256": "df3a2d57edc51cedb2681be8a859be686b71c67da89744fa23bc3553c359f438"
+    },
+    "libmlx.dylib": {
+      "path": "TensorSharp.Server.Host/bin/libmlx.dylib",
+      "bytes": 21653808,
+      "sha256": "b2ebe412931b6b9e575495b8fd6329e3d9d1b875bb62bcebd58a609a835b8dad"
+    },
+    "libmlxc.dylib": {
+      "path": "TensorSharp.Server.Host/bin/libmlxc.dylib",
+      "bytes": 837152,
+      "sha256": "15869028d146d41dd96d7fc2782ca60e54488c465ce38a43eb5a87bc1e08b401"
+    }
+  },
+  "production_hashes_unchanged_through": "native-free API and full-context proofs",
+  "finished": "2026-09-15T02:47:18Z",
+  "owned_proof_hosts_stopped": true
+}

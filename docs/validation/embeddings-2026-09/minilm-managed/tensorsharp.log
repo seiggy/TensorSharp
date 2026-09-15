@@ -1,0 +1,33 @@
+
+  ████████╗███████╗███╗   ██╗███████╗ ██████╗ ██████╗ ███████╗██╗  ██╗ █████╗ ██████╗ ██████╗ 
+  ╚══██╔══╝██╔════╝████╗  ██║██╔════╝██╔═══██╗██╔══██╗██╔════╝██║  ██║██╔══██╗██╔══██╗██╔══██╗
+     ██║   █████╗  ██╔██╗ ██║███████╗██║   ██║██████╔╝███████╗███████║███████║██████╔╝██████╔╝
+     ██║   ██╔══╝  ██║╚██╗██║╚════██║██║   ██║██╔══██╗╚════██║██╔══██║██╔══██║██╔══██╗██╔═══╝ 
+     ██║   ███████╗██║ ╚████║███████║╚██████╔╝██║  ██║███████║██║  ██║██║  ██║██║  ██║██║     
+     ╚═╝   ╚══════╝╚═╝  ╚═══╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝
+
+                           Open-Source Deep Learning / AI C# Library
+                           https://github.com/zhongkaifu/TensorSharp
+
+warn: TensorSharp.Server.Logging.RequestLoggingMiddleware[1103]
+      HTTP POST /v1/embeddings -> 400 in 0.7 ms (response content-type=application/json; charset=utf-8)
+warn: TensorSharp.Server.Logging.RequestLoggingMiddleware[1103]
+      HTTP POST /v1/embeddings -> 400 in 0.1 ms (response content-type=application/json; charset=utf-8)
+warn: TensorSharp.Server.Logging.RequestLoggingMiddleware[1103]
+      HTTP POST /v1/embeddings -> 400 in 0.0 ms (response content-type=application/json; charset=utf-8)
+warn: TensorSharp.Server.Logging.RequestLoggingMiddleware[1103]
+      HTTP POST /v1/embeddings -> 400 in 0.1 ms (response content-type=application/json; charset=utf-8)
+warn: TensorSharp.Server.Logging.RequestLoggingMiddleware[1103]
+      HTTP POST /v1/embeddings -> 400 in 0.2 ms (response content-type=application/json; charset=utf-8)
+warn: TensorSharp.Server.Logging.RequestLoggingMiddleware[1103]
+      HTTP POST /v1/embeddings -> 400 in 0.1 ms (response content-type=application/json; charset=utf-8)
+warn: TensorSharp.Server.Logging.RequestLoggingMiddleware[1103]
+      HTTP POST /v1/embeddings -> 400 in 0.0 ms (response content-type=application/json; charset=utf-8)
+warn: TensorSharp.Server.Logging.RequestLoggingMiddleware[1103]
+      HTTP POST /v1/embeddings -> 400 in 0.0 ms (response content-type=application/json; charset=utf-8)
+warn: TensorSharp.Server.Logging.RequestLoggingMiddleware[1103]
+      HTTP POST /v1/embeddings -> 400 in 0.0 ms (response content-type=application/json; charset=utf-8)
+warn: TensorSharp.Server.Logging.RequestLoggingMiddleware[1103]
+      HTTP POST /v1/embeddings -> 400 in 0.0 ms (response content-type=application/json; charset=utf-8)
+warn: TensorSharp.Server.Logging.RequestLoggingMiddleware[1103]
+      HTTP POST /v1/embeddings -> 404 in 0.1 ms (response content-type=application/json; charset=utf-8)
