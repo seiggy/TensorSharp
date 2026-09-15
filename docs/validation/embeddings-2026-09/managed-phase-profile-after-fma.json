@@ -1,0 +1,67 @@
+{
+  "note": "Temporary phase tracing, removed after profiling. Attention remained the bottleneck and motivated transposed-key scoring.",
+  "results": {
+    "minilm": {
+      "short": {
+        "wall_ms": 1.3886460000001044,
+        "tokens": 17,
+        "phase_median_ms": {
+          "embedding": 0.014604,
+          "norm": 0.061999,
+          "qkv": 0.1232905,
+          "attention": 0.06472900000000001,
+          "attention_output": 0.068833,
+          "ffn_up": 0.1484385,
+          "gelu": 0.0618965,
+          "ffn_down": 0.134564,
+          "pooling": 0.004208
+        }
+      },
+      "medium": {
+        "wall_ms": 5.082374999999972,
+        "tokens": 152,
+        "phase_median_ms": {
+          "embedding": 0.093396,
+          "norm": 0.2365,
+          "qkv": 0.636562,
+          "attention": 1.0332915,
+          "attention_output": 0.28064599999999995,
+          "ffn_up": 0.817125,
+          "gelu": 0.2893135,
+          "ffn_down": 0.641728,
+          "pooling": 0.010333499999999999
+        }
+      },
+      "long": {
+        "wall_ms": 17.33235399999988,
+        "tokens": 422,
+        "phase_median_ms": {
+          "embedding": 0.237396,
+          "norm": 0.48200049999999994,
+          "qkv": 1.654833,
+          "attention": 8.1746035,
+          "attention_output": 0.6568535,
+          "ffn_up": 2.0969569999999997,
+          "gelu": 0.7189590000000001,
+          "ffn_down": 1.7347074999999998,
+          "pooling": 0.0205835
+        }
+      },
+      "batch8short": {
+        "wall_ms": 4.842146000000103,
+        "tokens": 144,
+        "phase_median_ms": {
+          "embedding": 0.0780625,
+          "norm": 0.23314599999999996,
+          "qkv": 0.63425,
+          "attention": 0.260021,
+          "attention_output": 0.26374949999999997,
+          "ffn_up": 0.7983755000000001,
+          "gelu": 0.276771,
+          "ffn_down": 0.6260409999999998,
+          "pooling": 0.011625
+        }
+      }
+    }
+  }
+}

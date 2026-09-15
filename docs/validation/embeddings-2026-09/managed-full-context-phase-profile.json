@@ -1,0 +1,100 @@
+{
+  "purpose": "Temporary diagnostic instrumentation, not performance gate. Per-phase attention_work_ms sums concurrent worker times. Production instrumentation removed afterward.",
+  "command": [
+    "dotnet",
+    "/Users/zhongkaifu/work/TensorSharp/TensorSharp.Server.Host/bin/TensorSharp.Server.Host.dll",
+    "--model",
+    "/Users/zhongkaifu/work/models/embeddings/snowflake-arctic-embed-l-v2.0-q8_0.gguf",
+    "--embeddings",
+    "--backend",
+    "cpu",
+    "--embedding-threads",
+    "8",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "18384",
+    "--no-webui",
+    "--no-skills"
+  ],
+  "prewarm_seconds": 10,
+  "samples": [
+    {
+      "iteration": 0,
+      "warmup": true,
+      "wall_ms": 24300.016,
+      "max_abs_difference_from_uninstrumented_headmajor": 0.0
+    },
+    {
+      "iteration": 1,
+      "warmup": true,
+      "wall_ms": 23510.127542,
+      "max_abs_difference_from_uninstrumented_headmajor": 0.0
+    },
+    {
+      "iteration": 2,
+      "warmup": false,
+      "wall_ms": 25045.300875,
+      "max_abs_difference_from_uninstrumented_headmajor": 0.0
+    }
+  ],
+  "traces": [
+    {
+      "tokens": 8192,
+      "phases": {
+        "embedding": 2.758375,
+        "norm": 109.42445699999998,
+        "qkv": 767.955503,
+        "attention": 21081.081582,
+        "attention_output": 235.46858400000002,
+        "ffn_up": 991.8982929999999,
+        "gelu": 175.02658100000005,
+        "ffn_down": 931.5659999999999,
+        "pooling": 0.001792
+      },
+      "attention_work_ms": {
+        "scores": 77511.140673,
+        "softmax": 29694.14844,
+        "values": 59218.244019
+      }
+    },
+    {
+      "tokens": 8192,
+      "phases": {
+        "embedding": 0.86675,
+        "norm": 91.24642000000001,
+        "qkv": 719.3377509999998,
+        "attention": 20432.123750000002,
+        "attention_output": 244.32333199999997,
+        "ffn_up": 943.5695800000002,
+        "gelu": 153.09908400000003,
+        "ffn_down": 923.4135419999999,
+        "pooling": 0.002083
+      },
+      "attention_work_ms": {
+        "scores": 74334.442893,
+        "softmax": 28821.40556,
+        "values": 58377.052343
+      }
+    },
+    {
+      "tokens": 8192,
+      "phases": {
+        "embedding": 1.3055,
+        "norm": 100.15937699999998,
+        "qkv": 725.587998,
+        "attention": 21943.199876999995,
+        "attention_output": 256.6691670000001,
+        "ffn_up": 938.3857890000002,
+        "gelu": 169.38150200000004,
+        "ffn_down": 901.6546240000001,
+        "pooling": 0.001958
+      },
+      "attention_work_ms": {
+        "scores": 81948.904078,
+        "softmax": 30846.611113,
+        "values": 59987.208264
+      }
+    }
+  ]
+}

@@ -1,0 +1,224 @@
+[
+  {
+    "stage": "concurrency",
+    "name": "minilm",
+    "backend": "cpu",
+    "order": "forward",
+    "command": [
+      "python3",
+      "benchmarks/EmbeddingBench/concurrency_bench.py",
+      "--base-results",
+      "/Users/zhongkaifu/work/TensorSharp/docs/validation/embeddings-2026-09/minilm-cpu/results.json",
+      "--output",
+      "/Users/zhongkaifu/work/TensorSharp/docs/validation/embeddings-2026-09/minilm-cpu-concurrency",
+      "--require-performance"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 21.681665042,
+    "results": "/Users/zhongkaifu/work/TensorSharp/docs/validation/embeddings-2026-09/minilm-cpu-concurrency/results.json"
+  },
+  {
+    "stage": "concurrency",
+    "name": "minilm",
+    "backend": "cpu",
+    "order": "reverse",
+    "command": [
+      "python3",
+      "benchmarks/EmbeddingBench/concurrency_bench.py",
+      "--base-results",
+      "/Users/zhongkaifu/work/TensorSharp/docs/validation/embeddings-2026-09/minilm-cpu/results.json",
+      "--output",
+      "/Users/zhongkaifu/work/TensorSharp/docs/validation/embeddings-2026-09/minilm-cpu-concurrency-reverse",
+      "--require-performance",
+      "--tensorsharp-first"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 21.605711542,
+    "results": "/Users/zhongkaifu/work/TensorSharp/docs/validation/embeddings-2026-09/minilm-cpu-concurrency-reverse/results.json"
+  },
+  {
+    "stage": "concurrency",
+    "name": "minilm",
+    "backend": "managed",
+    "order": "forward",
+    "command": [
+      "python3",
+      "benchmarks/EmbeddingBench/concurrency_bench.py",
+      "--base-results",
+      "/Users/zhongkaifu/work/TensorSharp/docs/validation/embeddings-2026-09/minilm-managed/results.json",
+      "--output",
+      "/Users/zhongkaifu/work/TensorSharp/docs/validation/embeddings-2026-09/minilm-managed-concurrency",
+      "--require-performance"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 21.747992500000002,
+    "results": "/Users/zhongkaifu/work/TensorSharp/docs/validation/embeddings-2026-09/minilm-managed-concurrency/results.json"
+  },
+  {
+    "stage": "concurrency",
+    "name": "minilm",
+    "backend": "managed",
+    "order": "reverse",
+    "command": [
+      "python3",
+      "benchmarks/EmbeddingBench/concurrency_bench.py",
+      "--base-results",
+      "/Users/zhongkaifu/work/TensorSharp/docs/validation/embeddings-2026-09/minilm-managed/results.json",
+      "--output",
+      "/Users/zhongkaifu/work/TensorSharp/docs/validation/embeddings-2026-09/minilm-managed-concurrency-reverse",
+      "--require-performance",
+      "--tensorsharp-first"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 21.712509583999996,
+    "results": "/Users/zhongkaifu/work/TensorSharp/docs/validation/embeddings-2026-09/minilm-managed-concurrency-reverse/results.json"
+  },
+  {
+    "stage": "concurrency",
+    "name": "minilm",
+    "backend": "metal",
+    "order": "forward",
+    "command": [
+      "python3",
+      "benchmarks/EmbeddingBench/concurrency_bench.py",
+      "--base-results",
+      "/Users/zhongkaifu/work/TensorSharp/docs/validation/embeddings-2026-09/minilm-metal/results.json",
+      "--output",
+      "/Users/zhongkaifu/work/TensorSharp/docs/validation/embeddings-2026-09/minilm-metal-concurrency",
+      "--require-performance"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 21.853687084,
+    "results": "/Users/zhongkaifu/work/TensorSharp/docs/validation/embeddings-2026-09/minilm-metal-concurrency/results.json"
+  },
+  {
+    "stage": "concurrency",
+    "name": "minilm",
+    "backend": "metal",
+    "order": "reverse",
+    "command": [
+      "python3",
+      "benchmarks/EmbeddingBench/concurrency_bench.py",
+      "--base-results",
+      "/Users/zhongkaifu/work/TensorSharp/docs/validation/embeddings-2026-09/minilm-metal/results.json",
+      "--output",
+      "/Users/zhongkaifu/work/TensorSharp/docs/validation/embeddings-2026-09/minilm-metal-concurrency-reverse",
+      "--require-performance",
+      "--tensorsharp-first"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 21.781930458000005,
+    "results": "/Users/zhongkaifu/work/TensorSharp/docs/validation/embeddings-2026-09/minilm-metal-concurrency-reverse/results.json"
+  },
+  {
+    "stage": "concurrency",
+    "name": "snowflake",
+    "backend": "cpu",
+    "order": "forward",
+    "command": [
+      "python3",
+      "benchmarks/EmbeddingBench/concurrency_bench.py",
+      "--base-results",
+      "/Users/zhongkaifu/work/TensorSharp/docs/validation/embeddings-2026-09/snowflake-cpu/results.json",
+      "--output",
+      "/Users/zhongkaifu/work/TensorSharp/docs/validation/embeddings-2026-09/snowflake-cpu-concurrency",
+      "--require-performance"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 30.082880167,
+    "results": "/Users/zhongkaifu/work/TensorSharp/docs/validation/embeddings-2026-09/snowflake-cpu-concurrency/results.json"
+  },
+  {
+    "stage": "concurrency",
+    "name": "snowflake",
+    "backend": "cpu",
+    "order": "reverse",
+    "command": [
+      "python3",
+      "benchmarks/EmbeddingBench/concurrency_bench.py",
+      "--base-results",
+      "/Users/zhongkaifu/work/TensorSharp/docs/validation/embeddings-2026-09/snowflake-cpu/results.json",
+      "--output",
+      "/Users/zhongkaifu/work/TensorSharp/docs/validation/embeddings-2026-09/snowflake-cpu-concurrency-reverse",
+      "--require-performance",
+      "--tensorsharp-first"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 29.992230875,
+    "results": "/Users/zhongkaifu/work/TensorSharp/docs/validation/embeddings-2026-09/snowflake-cpu-concurrency-reverse/results.json"
+  },
+  {
+    "stage": "concurrency",
+    "name": "snowflake",
+    "backend": "managed",
+    "order": "forward",
+    "command": [
+      "python3",
+      "benchmarks/EmbeddingBench/concurrency_bench.py",
+      "--base-results",
+      "/Users/zhongkaifu/work/TensorSharp/docs/validation/embeddings-2026-09/snowflake-managed/results.json",
+      "--output",
+      "/Users/zhongkaifu/work/TensorSharp/docs/validation/embeddings-2026-09/snowflake-managed-concurrency",
+      "--require-performance"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 30.436329291999996,
+    "results": "/Users/zhongkaifu/work/TensorSharp/docs/validation/embeddings-2026-09/snowflake-managed-concurrency/results.json"
+  },
+  {
+    "stage": "concurrency",
+    "name": "snowflake",
+    "backend": "managed",
+    "order": "reverse",
+    "command": [
+      "python3",
+      "benchmarks/EmbeddingBench/concurrency_bench.py",
+      "--base-results",
+      "/Users/zhongkaifu/work/TensorSharp/docs/validation/embeddings-2026-09/snowflake-managed/results.json",
+      "--output",
+      "/Users/zhongkaifu/work/TensorSharp/docs/validation/embeddings-2026-09/snowflake-managed-concurrency-reverse",
+      "--require-performance",
+      "--tensorsharp-first"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 30.325170083000003,
+    "results": "/Users/zhongkaifu/work/TensorSharp/docs/validation/embeddings-2026-09/snowflake-managed-concurrency-reverse/results.json"
+  },
+  {
+    "stage": "concurrency",
+    "name": "snowflake",
+    "backend": "metal",
+    "order": "forward",
+    "command": [
+      "python3",
+      "benchmarks/EmbeddingBench/concurrency_bench.py",
+      "--base-results",
+      "/Users/zhongkaifu/work/TensorSharp/docs/validation/embeddings-2026-09/snowflake-metal/results.json",
+      "--output",
+      "/Users/zhongkaifu/work/TensorSharp/docs/validation/embeddings-2026-09/snowflake-metal-concurrency",
+      "--require-performance"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 25.746863125000004,
+    "results": "/Users/zhongkaifu/work/TensorSharp/docs/validation/embeddings-2026-09/snowflake-metal-concurrency/results.json"
+  },
+  {
+    "stage": "concurrency",
+    "name": "snowflake",
+    "backend": "metal",
+    "order": "reverse",
+    "command": [
+      "python3",
+      "benchmarks/EmbeddingBench/concurrency_bench.py",
+      "--base-results",
+      "/Users/zhongkaifu/work/TensorSharp/docs/validation/embeddings-2026-09/snowflake-metal/results.json",
+      "--output",
+      "/Users/zhongkaifu/work/TensorSharp/docs/validation/embeddings-2026-09/snowflake-metal-concurrency-reverse",
+      "--require-performance",
+      "--tensorsharp-first"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 25.91220924999999,
+    "results": "/Users/zhongkaifu/work/TensorSharp/docs/validation/embeddings-2026-09/snowflake-metal-concurrency-reverse/results.json"
+  }
+]

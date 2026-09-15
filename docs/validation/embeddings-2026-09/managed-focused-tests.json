@@ -1,0 +1,203 @@
+{
+  "suite": "Complete embedding/model/kernel/pool/server suite, including real GGUF models and queued-request batching",
+  "configuration": "Release",
+  "counts": {
+    "total": 245,
+    "executed": 245,
+    "passed": 245,
+    "failed": 0,
+    "error": 0,
+    "timeout": 0,
+    "aborted": 0,
+    "inconclusive": 0,
+    "passedButRunAborted": 0,
+    "notRunnable": 0,
+    "notExecuted": 0,
+    "disconnected": 0,
+    "warning": 0,
+    "completed": 0,
+    "inProgress": 0,
+    "pending": 0
+  },
+  "filter": "FullyQualifiedName~EmbeddingModelTests|FullyQualifiedName~EmbeddingHostingTests|FullyQualifiedName~EmbeddingEndpointTests|FullyQualifiedName~EmbeddingTokenizerTests|FullyQualifiedName~ManagedQuantizedOpsTests|FullyQualifiedName~ManagedEmbeddingQ8MatrixTests|FullyQualifiedName~CpuWorkerPoolTests|FullyQualifiedName~ManagedEmbeddingMathTests|FullyQualifiedName~NativeLongEmbeddingTests|FullyQualifiedName~EmbeddingRequestDispatcherTests",
+  "command": [
+    "dotnet",
+    "test",
+    "InferenceWeb.Tests/InferenceWeb.Tests.csproj",
+    "-c",
+    "Release",
+    "--no-build",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~EmbeddingModelTests|FullyQualifiedName~EmbeddingHostingTests|FullyQualifiedName~EmbeddingEndpointTests|FullyQualifiedName~EmbeddingTokenizerTests|FullyQualifiedName~ManagedQuantizedOpsTests|FullyQualifiedName~ManagedEmbeddingQ8MatrixTests|FullyQualifiedName~CpuWorkerPoolTests|FullyQualifiedName~ManagedEmbeddingMathTests|FullyQualifiedName~NativeLongEmbeddingTests|FullyQualifiedName~EmbeddingRequestDispatcherTests",
+    "--logger",
+    "trx;LogFileName=embedding-managed-focused.trx",
+    "--results-directory",
+    "InferenceWeb.Tests/TestResults"
+  ],
+  "environment": {
+    "TS_TEST_EMBEDDING_BACKEND": "GGML_CPU",
+    "TENSORSHARP_MINILM_EMBED_MODEL": "/Users/zhongkaifu/work/models/embeddings/all-MiniLM-L6-v2-Q8_0.gguf",
+    "TENSORSHARP_SNOWFLAKE_EMBED_MODEL": "/Users/zhongkaifu/work/models/embeddings/snowflake-arctic-embed-l-v2.0-q8_0.gguf"
+  },
+  "notes": [
+    "Model tests explicitly exercise CPU pure C# and GGML_CPU native implementations.",
+    "Includes independent analytic F32 fixture for mean, CLS and last pooling; full published-model managed/native agreement; strict batch parity; in-flight managed cancellation recovery.",
+    "Raw TRX is a local ignored artifact.",
+    "ARM packed Q8 tests include row and column tails, zero blocks, ties-even activation rounding, threads 1/3, output canaries, and agreement with existing direct Q8 kernels.",
+    "Includes all shared-pool regressions and13 owned-pool thread count, nesting, disposal/join, cancellation identity and recovery cases. Managed encoder uses only owned workers for all formats and math stages.",
+    "Three independent scalar full-encoder F32 oracles verify four-head tiled attention on sequence lengths1/3/5/7 and all pooling modes to absolute2e-6.",
+    "Six FMA Dot4 and five transposed-key score tests compare with double references, with unaligned starts/tails, NaN padding and output canaries. Key stride has width-1 extra positions beyond total tokens; mixed-sequence total8/start3 regression covered.",
+    "Five packed-value oracle cases cover1/3/5/17/129-token tails,1/2/3/4-query tails, unaligned starts and canary output gaps. Q8 one-row remainder reuses existing direct-reference rows1/5 tests.",
+    "Three long-sequence full-encoder scalar tests cover all pooling modes and mixed lengths3/1023/1024/1025, retaining2e-6 scalar and batch/single maximum-error gates across whole-row and online tiled softmax. Prior209-case scheduling evidence retained in managed-focused-tests-before-tiled-attention.json.",
+    "Three native long-context fixture tests verify unchanged native batch/single/reordered vectors and independent scalar oracles for native FP16-table GELU and managed FP32 GELU; see native-long-fixture-tests.json.",
+    "Nine online-softmax double-oracle cases cover key lengths1/63/64/65/127/128/129/1025, query counts1/3/4/7/63/64, heads8/32/64 onARM, changing running maxima, unaligned starts and output/scratch canaries. These exercise long-only4query\u00d716output register kernels and64query\u00d7128key tiles.",
+    "Seven fused subtract/Vector.Exp/sum cases verify scalar accuracy and unaligned/tail buffer safety. No approximate exponential or reduced-precision attention was added."
+  ],
+  "failed_tests": [],
+  "run_times": {
+    "creation": "2026-09-14T19:46:38.8348820-07:00",
+    "queuing": "2026-09-14T19:46:38.8348820-07:00",
+    "start": "2026-09-14T19:46:38.1381680-07:00",
+    "finish": "2026-09-14T19:46:43.3942890-07:00"
+  },
+  "embedding_http_and_hosting_tests": 83,
+  "result": "passed",
+  "test_command": [
+    "dotnet",
+    "test",
+    "InferenceWeb.Tests/InferenceWeb.Tests.csproj",
+    "-c",
+    "Release",
+    "--no-build",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~EmbeddingModelTests|FullyQualifiedName~EmbeddingHostingTests|FullyQualifiedName~EmbeddingEndpointTests|FullyQualifiedName~EmbeddingTokenizerTests|FullyQualifiedName~ManagedQuantizedOpsTests|FullyQualifiedName~ManagedEmbeddingQ8MatrixTests|FullyQualifiedName~CpuWorkerPoolTests|FullyQualifiedName~ManagedEmbeddingMathTests|FullyQualifiedName~NativeLongEmbeddingTests|FullyQualifiedName~EmbeddingRequestDispatcherTests",
+    "--logger",
+    "trx;LogFileName=embedding-managed-focused.trx",
+    "--results-directory",
+    "InferenceWeb.Tests/TestResults"
+  ],
+  "build_command": [
+    "dotnet",
+    "build",
+    "InferenceWeb.Tests/InferenceWeb.Tests.csproj",
+    "-c",
+    "Release",
+    "--no-restore",
+    "-p:TensorSharpSkipGgmlNative=true",
+    "-p:TensorSharpSkipMlxNative=true",
+    "-clp:ErrorsOnly"
+  ],
+  "trx": "InferenceWeb.Tests/TestResults/embedding-managed-focused.trx",
+  "test_assembly_sha256": "3b7c459e61341d7ca4b78b9f13105ae15e383a09359f075944fb011223df620f",
+  "managed_assembly_sha256": {
+    "TensorSharp.AgentHost.dll": "0e74528b890f6427e9da4e7de5e8601a7f4e3b01fa743b0edb240c45a28d9000",
+    "TensorSharp.Backends.Cuda.dll": "c73f9e7e2491cf9d3a3fe973d1f145eeac8bb141dd397e3aece07c0934254737",
+    "TensorSharp.Backends.GGML.dll": "f2cf743ed810ba9b81a0f7040e3ed128f46e38affbee13d5883be89f499e5b21",
+    "TensorSharp.Backends.MLX.dll": "b41a4f2220faab27c01888b43dba7ba060298314fbfc4f3b5260931b4505394c",
+    "TensorSharp.Chat.dll": "91446afe6067f7c058e7064a11cd557c434a141bb0f5cf0973e759f3cccae1e7",
+    "TensorSharp.Core.dll": "c74f5049eea5e1dfedb4e3f1d00d72ed40b03bde56e9f4db4d64141000da591e",
+    "TensorSharp.Distributed.dll": "8a8833770aca291a12e3ecf0968e6c2e11037090f04fac9d0891fd5485f513c2",
+    "TensorSharp.Models.dll": "41bb5e464af4af4459a66316531ba959ed76630d4b46f2b9b82689d20bcf2598",
+    "TensorSharp.Runtime.Logging.dll": "13744dd6f77db9905165b033a44042ad020bbbf27e0efd1c7e3ccf0f5d8dbff3",
+    "TensorSharp.Runtime.dll": "683f7ba0875adae4763ef19bef062f14b4b1fb9b79850369c167544949fc0e57",
+    "TensorSharp.Server.Host.dll": "a09fc7ef573029f9ee9895cc7229316fdfb48f050dd9b2f17e23c3f2f0ab3c28",
+    "TensorSharp.Server.dll": "2122c904a9dc4b38163e081d9d354222ff9487c49dfb4a26edfb3fb095ac17f4"
+  },
+  "production_binaries": {
+    "TensorSharp.AgentHost.dll": {
+      "path": "TensorSharp.Server.Host/bin/TensorSharp.AgentHost.dll",
+      "bytes": 621056,
+      "sha256": "0e74528b890f6427e9da4e7de5e8601a7f4e3b01fa743b0edb240c45a28d9000"
+    },
+    "TensorSharp.Backends.Cuda.dll": {
+      "path": "TensorSharp.Server.Host/bin/TensorSharp.Backends.Cuda.dll",
+      "bytes": 271872,
+      "sha256": "c73f9e7e2491cf9d3a3fe973d1f145eeac8bb141dd397e3aece07c0934254737"
+    },
+    "TensorSharp.Backends.GGML.dll": {
+      "path": "TensorSharp.Server.Host/bin/TensorSharp.Backends.GGML.dll",
+      "bytes": 281600,
+      "sha256": "f2cf743ed810ba9b81a0f7040e3ed128f46e38affbee13d5883be89f499e5b21"
+    },
+    "TensorSharp.Backends.MLX.dll": {
+      "path": "TensorSharp.Server.Host/bin/TensorSharp.Backends.MLX.dll",
+      "bytes": 833536,
+      "sha256": "b41a4f2220faab27c01888b43dba7ba060298314fbfc4f3b5260931b4505394c"
+    },
+    "TensorSharp.Chat.dll": {
+      "path": "TensorSharp.Server.Host/bin/TensorSharp.Chat.dll",
+      "bytes": 435200,
+      "sha256": "91446afe6067f7c058e7064a11cd557c434a141bb0f5cf0973e759f3cccae1e7"
+    },
+    "TensorSharp.Core.dll": {
+      "path": "TensorSharp.Server.Host/bin/TensorSharp.Core.dll",
+      "bytes": 165888,
+      "sha256": "c74f5049eea5e1dfedb4e3f1d00d72ed40b03bde56e9f4db4d64141000da591e"
+    },
+    "TensorSharp.Distributed.dll": {
+      "path": "TensorSharp.Server.Host/bin/TensorSharp.Distributed.dll",
+      "bytes": 18944,
+      "sha256": "8a8833770aca291a12e3ecf0968e6c2e11037090f04fac9d0891fd5485f513c2"
+    },
+    "TensorSharp.Models.dll": {
+      "path": "TensorSharp.Server.Host/bin/TensorSharp.Models.dll",
+      "bytes": 1990656,
+      "sha256": "41bb5e464af4af4459a66316531ba959ed76630d4b46f2b9b82689d20bcf2598"
+    },
+    "TensorSharp.Runtime.Logging.dll": {
+      "path": "TensorSharp.Server.Host/bin/TensorSharp.Runtime.Logging.dll",
+      "bytes": 24576,
+      "sha256": "13744dd6f77db9905165b033a44042ad020bbbf27e0efd1c7e3ccf0f5d8dbff3"
+    },
+    "TensorSharp.Runtime.dll": {
+      "path": "TensorSharp.Server.Host/bin/TensorSharp.Runtime.dll",
+      "bytes": 616448,
+      "sha256": "683f7ba0875adae4763ef19bef062f14b4b1fb9b79850369c167544949fc0e57"
+    },
+    "TensorSharp.Server.Host.dll": {
+      "path": "TensorSharp.Server.Host/bin/TensorSharp.Server.Host.dll",
+      "bytes": 119296,
+      "sha256": "a09fc7ef573029f9ee9895cc7229316fdfb48f050dd9b2f17e23c3f2f0ab3c28"
+    },
+    "TensorSharp.Server.dll": {
+      "path": "TensorSharp.Server.Host/bin/TensorSharp.Server.dll",
+      "bytes": 295936,
+      "sha256": "2122c904a9dc4b38163e081d9d354222ff9487c49dfb4a26edfb3fb095ac17f4"
+    },
+    "libGgmlOps.dylib": {
+      "path": "TensorSharp.Server.Host/bin/libGgmlOps.dylib",
+      "bytes": 5718144,
+      "sha256": "0d2e24bca98997bf76b7046f8ace7da68f51152f29e56e81eb0c8e0c92d66e37"
+    },
+    "libjaccl.dylib": {
+      "path": "TensorSharp.Server.Host/bin/libjaccl.dylib",
+      "bytes": 930000,
+      "sha256": "df3a2d57edc51cedb2681be8a859be686b71c67da89744fa23bc3553c359f438"
+    },
+    "libmlx.dylib": {
+      "path": "TensorSharp.Server.Host/bin/libmlx.dylib",
+      "bytes": 21653808,
+      "sha256": "b2ebe412931b6b9e575495b8fd6329e3d9d1b875bb62bcebd58a609a835b8dad"
+    },
+    "libmlxc.dylib": {
+      "path": "TensorSharp.Server.Host/bin/libmlxc.dylib",
+      "bytes": 837152,
+      "sha256": "15869028d146d41dd96d7fc2782ca60e54488c465ce38a43eb5a87bc1e08b401"
+    }
+  },
+  "final_verification_artifact": "docs/validation/embeddings-2026-09/final-verification.json",
+  "focused_classes": [
+    "EmbeddingModelTests",
+    "EmbeddingHostingTests",
+    "EmbeddingEndpointTests",
+    "EmbeddingTokenizerTests",
+    "ManagedQuantizedOpsTests",
+    "ManagedEmbeddingQ8MatrixTests",
+    "CpuWorkerPoolTests",
+    "ManagedEmbeddingMathTests",
+    "NativeLongEmbeddingTests",
+    "EmbeddingRequestDispatcherTests"
+  ]
+}

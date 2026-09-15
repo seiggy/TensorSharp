@@ -1,0 +1,16 @@
+{
+  "configuration": "Release",
+  "result": "passed",
+  "passed": 55,
+  "failed": 0,
+  "total": 55,
+  "test_command": "dotnet test InferenceWeb.Tests/InferenceWeb.Tests.csproj -c Release --no-restore -p:TensorSharpSkipGgmlNative=true -p:TensorSharpSkipMlxNative=true -clp:ErrorsOnly --filter 'FullyQualifiedName~EmbeddingEndpointTests|FullyQualifiedName~EmbeddingHostingTests' --logger 'trx;LogFileName=embedding-api-final.trx' --results-directory InferenceWeb.Tests/TestResults",
+  "trx": "InferenceWeb.Tests/TestResults/embedding-api-final.trx (gitignored)",
+  "review_fixes_verified": [
+    "Embedding/show JSON bodies are bounded to 16 MiB before buffering; oversized Content-Length and chunked requests return compact protocol-shaped 413 errors.",
+    "Invalid model path characters return 400 for /api/show and /v1/embeddings.",
+    "Double-precision reciprocal normalization preserves finite unit vectors for subnormal prefixes and large finite components."
+  ],
+  "new_tests_since_full_unit_lane": 9,
+  "full_unit_lane": "unit-tests.json records the preceding Release correctness lane of 3801 tests; these 55 API/hosting tests include 46 previously counted cases plus 9 new review regressions."
+}

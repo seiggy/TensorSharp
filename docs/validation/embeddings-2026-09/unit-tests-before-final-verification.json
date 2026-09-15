@@ -1,0 +1,81 @@
+{
+  "configuration": "Release",
+  "suite": "self-contained unit correctness",
+  "result": "passed",
+  "counts": {
+    "total": 3868,
+    "executed": 3868,
+    "passed": 3868,
+    "failed": 0,
+    "error": 0,
+    "timeout": 0,
+    "aborted": 0,
+    "inconclusive": 0,
+    "passedButRunAborted": 0,
+    "notRunnable": 0,
+    "notExecuted": 0,
+    "disconnected": 0,
+    "warning": 0,
+    "completed": 0,
+    "inProgress": 0,
+    "pending": 0
+  },
+  "embedding_http_and_hosting_tests": 65,
+  "failed_tests": [],
+  "build_command": "dotnet build InferenceWeb.Tests/InferenceWeb.Tests.csproj -c Release --no-restore -p:TensorSharpSkipGgmlNative=true -p:TensorSharpSkipMlxNative=true -clp:ErrorsOnly",
+  "test_command": "dotnet test InferenceWeb.Tests/InferenceWeb.Tests.csproj -c Release --no-build --no-restore --filter 'Category!=Bench&Requires!=Models&Requires!=Cuda&Requires!=Mlx' --logger 'trx;LogFileName=embedding-final.trx' --results-directory InferenceWeb.Tests/TestResults",
+  "trx": "InferenceWeb.Tests/TestResults/embedding-final.trx (gitignored)",
+  "coverage": [
+    "OpenAI and Ollama embedding protocols over actual Kestrel routes with a deterministic encoder",
+    "Standalone ASP.NET hosting without chat services",
+    "Token arrays, batching, input validation, overflow/truncation, normalization, base64 little-endian float32 and request cancellation",
+    "Embedding metadata and chat-mode guard",
+    "JSON/CLI configuration and startup diagnostics",
+    "Mobile native export retention",
+    "Existing managed runtime and CPU quantized correctness, including Q2_K row offsets/strides/tails",
+    "Pure C# hosting selection and actual model construction without native backend probes",
+    "Owned and shared CPU worker pools, joining/disposal, nested jobs and cancellation identity/recovery",
+    "Packed Q8 projection and attention SIMD tails/strides/canaries against scalar references",
+    "Shipped embedding JSON presets are included in the supported configuration contract"
+  ],
+  "initial_regression_fixed": "The initial Debug lane found three new embedding exports missing from TensorAgent iOS Release linker retention. The manifest was updated; the final Release lane passes.",
+  "exclusions": [
+    "Timing benchmarks",
+    "Model-weight-gated tests",
+    "CUDA-gated tests",
+    "MLX-gated tests"
+  ],
+  "model_and_performance_validation": "See managed-focused-tests.json(205 focused passes including real models), managed-native-free.json, managed-context-boundaries.json, and the final HTTP parity/benchmark artifacts.",
+  "run_times": {
+    "creation": "2026-09-14T18:30:24.7063600-07:00",
+    "queuing": "2026-09-14T18:30:24.7063600-07:00",
+    "start": "2026-09-14T18:30:23.7388270-07:00",
+    "finish": "2026-09-14T18:30:58.1027560-07:00"
+  },
+  "preceding_focused_suite": {
+    "artifact": "managed-focused-tests.json",
+    "passed": 205,
+    "failed": 0,
+    "includes_real_models": true
+  },
+  "final_verification_correction": {
+    "initial_run": {
+      "total": 3868,
+      "passed": 3867,
+      "failed": 1,
+      "test": "ConfigFileArgsTests.ShippedConfigs_UseOnlyKeysTheServerAccepts",
+      "trx": "InferenceWeb.Tests/TestResults/embedding-config-contract-pre-fix.trx (gitignored)"
+    },
+    "cause": "The test-maintained supported configuration key list did not yet contain embeddings, embedding-threads, or embedding-context-size used by the new shipped JSON presets.",
+    "fix": "Added the three already-supported parser keys to the test contract. No runtime source changes.",
+    "verified": "Full Release suite rebuilt and rerun:3868/3868 passed."
+  },
+  "test_assembly_sha256": "ee27eb3724e8607883a3ec12ff75cea9d3341e79726e46ebf5264fb76d9bfd5b",
+  "managed_assembly_sha256": {
+    "TensorSharp.Core.dll": "c74f5049eea5e1dfedb4e3f1d00d72ed40b03bde56e9f4db4d64141000da591e",
+    "TensorSharp.Models.dll": "28e7d2629af05a90a68bfeb9a6a6bb3c8757a353fe5457699a793f65f5a6a665",
+    "TensorSharp.Chat.dll": "7950225d5d8e7d63419b3ab226771b6e7174ae6876e4173d57f3be291d556fe5",
+    "TensorSharp.Server.dll": "942d0c5c8a06a9bd303154141983e90cd116c7a5a6c5c6be238f8f48912f9063",
+    "TensorSharp.Server.Host.dll": "e1724cd8e01840a283594a31e8ea4ed681d1fd944c3f336018dae339ee0e0e7d"
+  }
+}

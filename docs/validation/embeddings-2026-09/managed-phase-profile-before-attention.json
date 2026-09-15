@@ -1,0 +1,129 @@
+{
+  "note": "Diagnostic baseline with optional temporary phase tracing, owned pool and packed Q8 before attention tiling. Tracing removed from production source. Performance gates use separate uninstrumented HTTP benchmark.",
+  "results": {
+    "minilm": {
+      "short": {
+        "wall_ms": 1.6163334999999002,
+        "tokens": 17,
+        "phase_median_ms": {
+          "embedding": 0.06318750000000001,
+          "norm": 0.064854,
+          "qkv": 0.12897999999999998,
+          "attention": 0.0541875,
+          "attention_output": 0.06799849999999999,
+          "ffn_up": 0.1552495,
+          "gelu": 0.0625415,
+          "ffn_down": 0.1398745,
+          "pooling": 0.0041455
+        }
+      },
+      "medium": {
+        "wall_ms": 8.457208500000313,
+        "tokens": 152,
+        "phase_median_ms": {
+          "embedding": 0.5393755,
+          "norm": 0.2613960000000001,
+          "qkv": 0.6565405,
+          "attention": 2.695875,
+          "attention_output": 0.310145,
+          "ffn_up": 0.9033545,
+          "gelu": 0.30845849999999997,
+          "ffn_down": 0.6910000000000001,
+          "pooling": 0.009563
+        }
+      },
+      "long": {
+        "wall_ms": 38.473375000000146,
+        "tokens": 422,
+        "phase_median_ms": {
+          "embedding": 1.4842085,
+          "norm": 0.567352,
+          "qkv": 1.7611890000000001,
+          "attention": 28.0899795,
+          "attention_output": 0.8112925000000001,
+          "ffn_up": 2.1758344999999997,
+          "gelu": 0.8465830000000001,
+          "ffn_down": 1.896376,
+          "pooling": 0.0204585
+        }
+      },
+      "batch8short": {
+        "wall_ms": 5.784500499999901,
+        "tokens": 144,
+        "phase_median_ms": {
+          "embedding": 0.516396,
+          "norm": 0.23864500000000002,
+          "qkv": 0.627397,
+          "attention": 0.31612450000000003,
+          "attention_output": 0.285397,
+          "ffn_up": 0.7992295,
+          "gelu": 0.2904165,
+          "ffn_down": 0.658437,
+          "pooling": 0.0090625
+        }
+      }
+    },
+    "snowflake": {
+      "short": {
+        "wall_ms": 11.447165999999953,
+        "tokens": 19,
+        "phase_median_ms": {
+          "embedding": 0.140729,
+          "norm": 0.4717325,
+          "qkv": 1.9704599999999999,
+          "attention": 0.4512284999999999,
+          "attention_output": 0.8665224999999999,
+          "ffn_up": 2.5340205000000005,
+          "gelu": 0.542543,
+          "ffn_down": 2.3020199999999997,
+          "pooling": 0.026896
+        }
+      },
+      "medium": {
+        "wall_ms": 106.97445850000031,
+        "tokens": 172,
+        "phase_median_ms": {
+          "embedding": 1.0351045,
+          "norm": 2.4318725,
+          "qkv": 15.185517000000003,
+          "attention": 27.663895499999995,
+          "attention_output": 5.0452295,
+          "ffn_up": 18.833085000000004,
+          "gelu": 4.1195205,
+          "ffn_down": 18.2004405,
+          "pooling": 0.0020835000000000003
+        }
+      },
+      "long": {
+        "wall_ms": 463.7643340000004,
+        "tokens": 478,
+        "phase_median_ms": {
+          "embedding": 0.34456200000000003,
+          "norm": 6.147812999999999,
+          "qkv": 43.535021,
+          "attention": 269.55210450000004,
+          "attention_output": 14.161540500000005,
+          "ffn_up": 55.17123050000001,
+          "gelu": 9.9457925,
+          "ffn_down": 54.6136855,
+          "pooling": 0.0022505
+        }
+      },
+      "batch8short": {
+        "wall_ms": 95.24510399999997,
+        "tokens": 160,
+        "phase_median_ms": {
+          "embedding": 0.116125,
+          "norm": 2.2542280000000003,
+          "qkv": 15.224250000000001,
+          "attention": 4.018374499999999,
+          "attention_output": 5.0007525,
+          "ffn_up": 19.407064,
+          "gelu": 5.027414500000001,
+          "ffn_down": 23.065167499999998,
+          "pooling": 0.010375
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "verification_command": [
+    "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+    "benchmarks/EmbeddingBench/native_free_smoke.py",
+    "--source",
+    "TensorSharp.Server.Host/bin",
+    "--copy",
+    "/tmp/tensorsharp-embedding-managed-host",
+    "--model",
+    "/Users/zhongkaifu/work/models/embeddings/all-MiniLM-L6-v2-Q8_0.gguf",
+    "--model",
+    "/Users/zhongkaifu/work/models/embeddings/snowflake-arctic-embed-l-v2.0-q8_0.gguf",
+    "--output",
+    "docs/validation/embeddings-2026-09/managed-native-free.json",
+    "--context-output",
+    "docs/validation/embeddings-2026-09/managed-context-boundaries.json"
+  ],
+  "backend": "cpu",
+  "native_free_host": true,
+  "passed": true,
+  "models": [
+    {
+      "model": "all-MiniLM-L6-v2-Q8_0",
+      "context_tokens": 512,
+      "token_fixture": {
+        "bos": 101,
+        "word_a": 1037,
+        "eos": 102
+      },
+      "full_context": {
+        "status": 200,
+        "prompt_tokens": 512,
+        "dimensions": 384,
+        "norm": 0.9999999971013731,
+        "float32_sha256": "b41291164a02858a04c78168db66cd7f66efa72525a187c9132a80e19cd83b9b"
+      },
+      "overflow_rejections": [
+        {
+          "path": "/v1/embeddings",
+          "input_type": "tokens",
+          "status": 400,
+          "error": {
+            "error": {
+              "message": "Each token input must contain between 1 and 512 token IDs.",
+              "type": "invalid_request_error",
+              "param": "input",
+              "code": null
+            }
+          }
+        },
+        {
+          "path": "/v1/embeddings",
+          "input_type": "text",
+          "status": 400,
+          "error": {
+            "error": {
+              "message": "Input has 513 tokens and exceeds the model context limit of 512. (Parameter 'text')",
+              "type": "invalid_request_error",
+              "param": "input",
+              "code": null
+            }
+          }
+        },
+        {
+          "path": "/api/embed",
+          "input_type": "text",
+          "status": 400,
+          "error": {
+            "error": "Input has 513 tokens and exceeds the model context limit of 512. (Parameter 'text')"
+          }
+        }
+      ],
+      "ollama_truncation": {
+        "status": 200,
+        "prompt_tokens": 512,
+        "matches_explicit_eos_preserving_input": true,
+        "max_absolute_difference": 0.0,
+        "dimensions": 384,
+        "norm": 0.9999999971013731,
+        "float32_sha256": "b41291164a02858a04c78168db66cd7f66efa72525a187c9132a80e19cd83b9b"
+      },
+      "subsequent_short_request": {
+        "status": 200,
+        "prompt_tokens": 3,
+        "dimensions": 384,
+        "norm": 0.9999999950587058,
+        "float32_sha256": "5117f11e58e7335a3093fec785322153e746cf3dc5f6997bceb5a865f0bd5c45"
+      },
+      "passed": true
+    },
+    {
+      "model": "snowflake-arctic-embed-l-v2.0-q8_0",
+      "context_tokens": 8192,
+      "token_fixture": {
+        "bos": 0,
+        "word_a": 10,
+        "eos": 2
+      },
+      "full_context": {
+        "status": 200,
+        "prompt_tokens": 8192,
+        "dimensions": 1024,
+        "norm": 0.9999999992598412,
+        "float32_sha256": "dcb9a7fd245b67a2cee2d7191f4aa5f4dd5a89d59c3bebb87154d1f3e8a1f9ca"
+      },
+      "overflow_rejections": [
+        {
+          "path": "/v1/embeddings",
+          "input_type": "tokens",
+          "status": 400,
+          "error": {
+            "error": {
+              "message": "Each token input must contain between 1 and 8192 token IDs.",
+              "type": "invalid_request_error",
+              "param": "input",
+              "code": null
+            }
+          }
+        },
+        {
+          "path": "/v1/embeddings",
+          "input_type": "text",
+          "status": 400,
+          "error": {
+            "error": {
+              "message": "Input has 8193 tokens and exceeds the model context limit of 8192. (Parameter 'text')",
+              "type": "invalid_request_error",
+              "param": "input",
+              "code": null
+            }
+          }
+        },
+        {
+          "path": "/api/embed",
+          "input_type": "text",
+          "status": 400,
+          "error": {
+            "error": "Input has 8193 tokens and exceeds the model context limit of 8192. (Parameter 'text')"
+          }
+        }
+      ],
+      "ollama_truncation": {
+        "status": 200,
+        "prompt_tokens": 8192,
+        "matches_explicit_eos_preserving_input": true,
+        "max_absolute_difference": 0.0,
+        "dimensions": 1024,
+        "norm": 0.9999999992598412,
+        "float32_sha256": "dcb9a7fd245b67a2cee2d7191f4aa5f4dd5a89d59c3bebb87154d1f3e8a1f9ca"
+      },
+      "subsequent_short_request": {
+        "status": 200,
+        "prompt_tokens": 3,
+        "dimensions": 1024,
+        "norm": 1.0000000031608258,
+        "float32_sha256": "f6efa4abab2ad190ce96f1b72a75b8620b22498a7f0539a47731349217bc74c8"
+      },
+      "passed": true
+    }
+  ],
+  "managed_assembly_sha256": {
+    "TensorSharp.AgentHost.dll": "0e74528b890f6427e9da4e7de5e8601a7f4e3b01fa743b0edb240c45a28d9000",
+    "TensorSharp.Backends.Cuda.dll": "c73f9e7e2491cf9d3a3fe973d1f145eeac8bb141dd397e3aece07c0934254737",
+    "TensorSharp.Backends.GGML.dll": "f2cf743ed810ba9b81a0f7040e3ed128f46e38affbee13d5883be89f499e5b21",
+    "TensorSharp.Backends.MLX.dll": "b41a4f2220faab27c01888b43dba7ba060298314fbfc4f3b5260931b4505394c",
+    "TensorSharp.Chat.dll": "7950225d5d8e7d63419b3ab226771b6e7174ae6876e4173d57f3be291d556fe5",
+    "TensorSharp.Core.dll": "c74f5049eea5e1dfedb4e3f1d00d72ed40b03bde56e9f4db4d64141000da591e",
+    "TensorSharp.Distributed.dll": "8a8833770aca291a12e3ecf0968e6c2e11037090f04fac9d0891fd5485f513c2",
+    "TensorSharp.Models.dll": "28e7d2629af05a90a68bfeb9a6a6bb3c8757a353fe5457699a793f65f5a6a665",
+    "TensorSharp.Runtime.Logging.dll": "13744dd6f77db9905165b033a44042ad020bbbf27e0efd1c7e3ccf0f5d8dbff3",
+    "TensorSharp.Runtime.dll": "683f7ba0875adae4763ef19bef062f14b4b1fb9b79850369c167544949fc0e57",
+    "TensorSharp.Server.Host.dll": "e1724cd8e01840a283594a31e8ea4ed681d1fd944c3f336018dae339ee0e0e7d",
+    "TensorSharp.Server.dll": "942d0c5c8a06a9bd303154141983e90cd116c7a5a6c5c6be238f8f48912f9063"
+  }
+}
